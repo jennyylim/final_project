@@ -11,7 +11,9 @@
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
     <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="main_js.js "></script>
     <style>
+        
         /* BASIC */
         
         html {
@@ -303,24 +305,25 @@
             <form>
                 <input type="text" id="username" class="fadeIn second" name="username" placeholder="username">
                 <input type="text" id="password" class="fadeIn third" name="password" placeholder="password">
-                <input type="submit" class="fadeIn fourth" value="Log In">
+                
             </form>
+            <input type="submit" class="fadeIn fourth" value="Log In" onclick="check()">
 
-            <!-- Remind Passowrd -->
+            <!-- Remind Password -->
             <div id="formFooter">
                 <a class="underlineHover" href="#">Forgot Password?</a>
             </div>
 
             <!-- Sign up -->
             <div class="signUp">
-                <a class="underlineHover" href="/signUp.html">Sign up here</a>
+                <a class="underlineHover" href = "http://127.0.0.1:5500/final_project/signUp.html">Sign up here</a>
             </div>
 
         </div>
 
     </div>
 
-    <script>
+    <!-- <script>
         function validate() {
             var username = document.getElementById("username").value;
             var password = document.getElementById("password").value;
@@ -347,7 +350,7 @@
             else
                 alert("Invalid username and password");
         }
-    </script>
+    </script> -->
     <!-- <script src="" async defer></script> -->
 </body>
 
