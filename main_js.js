@@ -40,6 +40,8 @@ let products = [
     },
 ];
 
+
+
 for (let i = 0; i < carts.length; i++) {
     carts[i].addEventListener('click', () => {
         cartNumbers(products[i]);
@@ -133,8 +135,8 @@ function displayCart() {
             Object.values(cartItems).map((item, index) => {
                 productContainer.innerHTML += `
                 <div class="product">
-                    <i class="far fa-times-circle fa-2x"></i>
-                    <img class="cart-img" src="./PhotoStudio/wedding4.jpg">  
+                    <i class="delete far fa-times-circle fa-2x"></i>
+                    <img class="cart-img" src="./PhotoStudio/weddingThailand.webp"> 
                     <span class="sm-hide">${item.name}</span>
                 </div>
            <div class="price sm-hide">$${item.price}.00</div>
@@ -202,7 +204,7 @@ function manageQuantity() {
 }
 
 function deleteButtons() {
-    let deleteButtons = document.querySelectorAll('.product ion-icon');
+    let deleteButtons = document.querySelectorAll('.product i.delete.far');
     let productNumbers = localStorage.getItem('cartNumbers');
     let cartCost = localStorage.getItem("totalCost");
     let cartItems = localStorage.getItem('productsInCart');
@@ -226,6 +228,15 @@ function deleteButtons() {
     }
 }
 
+function addToCart() {
+    alert("Added to cart !");
+}
+
 // when page loads, this will run and check it
 onLoadCartNumbers();
 displayCart();
+
+/*Line 137 to change to the following:
+ <img class="cart-img" src="./PhotoStudio/${item.tag}"> 
+
+ item.tag refer to json "products" file */

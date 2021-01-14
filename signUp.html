@@ -12,7 +12,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC&family=Playfair+Display&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/81d30d81d6.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="style2.css">
+    <link rel="stylesheet" href="stylesheet.css">
 
 
 
@@ -56,10 +56,10 @@
                 </div>
 
                 <div class="col-12">
-                    <label for="username" class="form-label">Username</label>
+                    <label for="userName" class="form-label">Username</label>
                     <div class="input-group">
                         <span class="input-group-text">@</span>
-                        <input type="text" class="form-control" id="username" placeholder="Username" required="">
+                        <input type="text" class="form-control" id="userName" placeholder="Username" required="">
                         <div class="invalid-feedback">
                             Your username is required.
                         </div>
@@ -69,6 +69,14 @@
                 <div class="col-12">
                     <label for="email" class="form-label">Email <span class="text-muted">(Optional)</span></label>
                     <input type="email" class="form-control" id="email" placeholder="you@example.com">
+                    <div class="invalid-feedback">
+                        Please enter a valid email address for shipping updates.
+                    </div>
+                </div>
+
+                <div class="col-12">
+                    <label for="pw" class="form-label">Password <span class="text-muted"></span></label>
+                    <input type="pw" class="form-control" id="pw">
                     <div class="invalid-feedback">
                         Please enter a valid email address for shipping updates.
                     </div>
@@ -116,6 +124,7 @@
                         Zip code required.
                     </div>
                 </div>
+                <button class="submit">Submit</button>
             </div>
         </div>
 
