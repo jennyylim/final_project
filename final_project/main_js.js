@@ -226,6 +226,136 @@ function deleteButtons() {
     }
 }
 
+
+// This if the function for the sign up form and it register the information in the local storage.
+function store() {
+    var firstName = document.getElementById('firstName').value;
+    var lastName = document.getElementById('lastName').value;
+    var userName = document.getElementById('userName').value;
+    var email = document.getElementById('email').value;
+    var pw = document.getElementById('pw').value;
+    var address = document.getElementById('address').value;
+    var country = document.getElementById('country').value;
+    var state = document.getElementById('state').value;
+    var postal = document.getElementById('postal').value;
+    var lowerCaseLetters = /[a-z]/g;
+    var upperCaseLetters = /[A-Z]/g;
+    var numbers = /[0-9]/g;
+
+    if (userName.length == 0) {
+        alert('Please fill in Username');
+
+    } else if (pw.length == 0) {
+        alert('Please fill in password');
+
+    } else if (userName.length == 0 && pw.length == 0) {
+        alert('Please fill in username and password');
+
+    } else if (pw.length > 8) {
+        alert('Max of 8');
+
+    } else if (!pw.match(numbers)) {
+        alert('please add 1 number');
+
+    } else if (!pw.match(upperCaseLetters)) {
+        alert('please add 1 uppercase letter');
+
+    } else if (!pw.match(lowerCaseLetters)) {
+        alert('please add 1 lowercase letter');
+    }
+    else { alert('Account Created') };
+
+    let stored_users = JSON.parse(localStorage.getItem('users'));
+
+    if (stored_users) {
+        stored_users.push({
+            name: firstName, lastName, userId: userName, password: pw, add: address,
+            country: country, state: state, postal: postal
+        });
+        localStorage.setItem('users', JSON.stringify(stored_users));
+    }
+    else {
+        localStorage.setItem('users', JSON.stringify([{
+            name: firstName, lastName, userId: userName, password: pw, add: address,
+            country: country, state: state, postal: postal
+        }]));
+
+    }
+}
+
+//Function for the purpose of checking the user data against the local storage.
+function check() {
+    var usrName = document.getElementById('username');
+    var usrPw = document.getElementById('password');
+
+    let stored_users = JSON.parse(localStorage.getItem('users'));
+    for (let i = 0; i < stored_users.length; i++) {
+        if (stored_users[i].userId === usrName.value && stored_users[i].password === usrPw.value) {
+            alert('You are logged in ' + usrName.value);
+            window.location.href = "http://127.0.0.1:5500/final_project/home.html";
+
+        }
+        else {
+            return alert('Access denied. Valid username and password is required.');
+        }
+    }
+}
+
+
+
+// function check(){
+//     var storedName = localStorage.getItem('userId');
+//     var storedPw = localStorage.getItem('password');
+
+//     var userName = document.getElementById('username');
+//     var userPw = document.getElementById('password');
+//     // var userRemember = document.getElementById("rememberMe");
+
+//     if(userName.value == storedName && userPw.value == storedPw){
+//         alert('You are logged in.');
+//     }else{
+//         alert('Error on login');
+//     }
+// }
+
+// function check() {
+//     var usrName = document.getElementById('username');
+//     var usrPw = document.getElementById('password');
+//     let user = localStorage.getItem('users')
+//     for(i=0; i < user.length ; i++){
+//         var storedName = [];
+//         var storedPw = [];
+//         storedName[i]=localStorage.getItem('user[i]');
+//         storedPw[i]=localStorage.getItem('password[i]');
+//         if(usrName.value == storedName[i] && usrPw.value == storedPw[i]) {
+//             alert('You are logged in.');
+//         }else {
+//             alert('ERROR.');
+//         }
+//     }  
+// }
+
+// function check()
+// {
+//    const hash = Object.fromEntries(
+//    a.map(e => [e.name, e.password])
+// )
+// var username = document.getElementById('username').value;
+// var password = document.getElementById('password').value;
+// for (let key of hash) 
+// {
+
+//     if(key[0] === username && key[1]===atob(password))
+//      {
+//          alert('Login successful');
+//      }
+
+// else
+//      {
+//          alert('Login fail');
+//      }
+// }
+// }
 // when page loads, this will run and check it
 onLoadCartNumbers();
 displayCart();
