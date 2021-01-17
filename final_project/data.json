@@ -10,15 +10,15 @@
         "productId": 2,
         "productName": "Architectural",
         "productCode": "DLJ-02",
-        "description": "Experienced and professional photography ",
+        "description": "We can shoot onsite with our vast array lenses suited for capturing landscapes and large scales buildings intended for commercial purposes for your websites or brochures.",
         "price": 1000,
         "imageUrl": "http://openclipart.org/image/300px/svg_to_png/58471/garden_cart.png"
     },
     {
         "productId": 3,
-        "productName": "Studio photoshoot",
+        "productName": "Studio",
         "productCode": "DLJ-03",
-        "description": "<Insert description for Studio photoshoot>",
+        "description": "Whether it is for a corporate profiles,  ",
         "price": 8.9,
         "imageUrl": "http://openclipart.org/image/300px/svg_to_png/73/rejon_Hammer.png"
     },
@@ -32,7 +32,7 @@
     },
     {
         "productId": 5,
-        "productName": "Outdoor photoshoot",
+        "productName": "Outdoor",
         "productCode": "DLJ-05",
         "description": "<Insert description for Outdoor photoshoot>",
         "price": 35.95,
