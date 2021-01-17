@@ -262,22 +262,32 @@ function store() {
 
     } else if (!pw.match(lowerCaseLetters)) {
         alert('please add 1 lowercase letter');
-    }
-    else { alert('Account Created') };
+    } else { alert('Account Created') };
 
     let stored_users = JSON.parse(localStorage.getItem('users'));
 
     if (stored_users) {
         stored_users.push({
-            name: firstName, lastName, userId: userName, password: pw, add: address,
-            country: country, state: state, postal: postal
+            name: firstName,
+            lastName,
+            userId: userName,
+            password: pw,
+            add: address,
+            country: country,
+            state: state,
+            postal: postal
         });
         localStorage.setItem('users', JSON.stringify(stored_users));
-    }
-    else {
+    } else {
         localStorage.setItem('users', JSON.stringify([{
-            name: firstName, lastName, userId: userName, password: pw, add: address,
-            country: country, state: state, postal: postal
+            name: firstName,
+            lastName,
+            userId: userName,
+            password: pw,
+            add: address,
+            country: country,
+            state: state,
+            postal: postal
         }]));
 
     }
@@ -294,8 +304,7 @@ function check() {
             alert('You are logged in ' + usrName.value);
             window.location.href = "http://127.0.0.1:5500/final_project/home.html";
 
-        }
-        else {
+        } else {
             return alert('Access denied. Valid username and password is required.');
         }
     }
@@ -356,6 +365,11 @@ function check() {
 //      }
 // }
 // }
+
+function addToCart() {
+    alert("Added to cart !");
+}
+
 // when page loads, this will run and check it
 onLoadCartNumbers();
 displayCart();
