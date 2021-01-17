@@ -4,7 +4,7 @@
         "productCode": "DLJ-01",
         "description": "We fly you to your dream destination in style. Let our team make the all the arrangements while you look your best for your special day, glamourous and effervescent.",
         "price": 5000,
-        "imageUrl": "https://www.apple.com/newsroom/images/environments/stores/apple_nso-marina-bay-sands_exterior_09072020.jpg.news_app_ed.jpg"
+        "imageUrl": "https://www.exxposures.com/wp-content/uploads/2017/07-Architecture/Singapore-architecture-landscape-photography-05-1.jpg",
     },
     {
         "productId": 2,
@@ -12,7 +12,7 @@
         "productCode": "DLJ-02",
         "description": "We can shoot onsite with our vast array lenses suited for capturing landscapes and large scales buildings intended for commercial purposes for your websites or brochures.",
         "price": 1000,
-        "imageUrl": "http://openclipart.org/image/300px/svg_to_png/58471/garden_cart.png"
+        "imageUrl": "."
     },
     {
         "productId": 3,
