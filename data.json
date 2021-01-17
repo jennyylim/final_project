@@ -3,22 +3,22 @@
         "productName": "Wedding package",
         "productCode": "DLJ-01",
         "description": "We fly you to your dream destination in style. Let our team make the all the arrangements while you look your best for your special day, glamourous and effervescent.",
-        "price": 8000,
-        "imageUrl": "https://www.apple.com/newsroom/images/environments/stores/apple_nso-marina-bay-sands_exterior_09072020.jpg.news_app_ed.jpg"
+        "price": 5000,
+        "imageUrl": "https://www.exxposures.com/wp-content/uploads/2017/07-Architecture/Singapore-architecture-landscape-photography-05-1.jpg",
     },
     {
         "productId": 2,
-        "productName": "Architectural",     
+        "productName": "Architectural",
         "productCode": "DLJ-02",
-        "description": "<Insert description for Architectural>",
+        "description": "We can shoot onsite with our vast array lenses suited for capturing landscapes and large scales buildings intended for commercial purposes for your websites or brochures.",
         "price": 1000,
-        "imageUrl": "http://openclipart.org/image/300px/svg_to_png/58471/garden_cart.png"
+        "imageUrl": "."
     },
     {
         "productId": 3,
-        "productName": "Studio photoshoot",
+        "productName": "Studio",
         "productCode": "DLJ-03",
-        "description": "<Insert description for Studio photoshoot>",
+        "description": "Whether it is for a corporate profiles,  ",
         "price": 8.9,
         "imageUrl": "http://openclipart.org/image/300px/svg_to_png/73/rejon_Hammer.png"
     },
@@ -32,7 +32,7 @@
     },
     {
         "productId": 5,
-        "productName": "Outdoor photoshoot",
+        "productName": "Outdoor",
         "productCode": "DLJ-05",
         "description": "<Insert description for Outdoor photoshoot>",
         "price": 35.95,
@@ -46,4 +46,4 @@
         "price": 35.95,
         "imageUrl": "http://openclipart.org/image/300px/svg_to_png/120337/xbox-controller_01.png"
     }
-] 
+]
