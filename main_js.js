@@ -1,44 +1,87 @@
 let carts = document.querySelectorAll('.add-cart');
 
-let products = [
+const itemsContainer = document.getElementById("row_item");
 
-    {
-        name: 'Wedding Package',
-        tag: 'weddingpackage',
-        price: 5000,
-        inCart: 0
-    },
-    {
-        name: 'Architectural',
-        tag: 'architectural',
-        price: 1500,
-        inCart: 0
-    },
-    {
-        name: 'Studio Photoshoot',
-        tag: 'studio',
-        price: 1000,
-        inCart: 0
-    },
-    {
-        name: 'Outdoor Photoshoot',
-        tag: 'outdoor',
-        price: 1000,
-        inCart: 0
-    },
-    {
-        name: 'Product',
-        tag: 'product',
-        price: 200,
-        inCart: 0
-    },
-    {
-        name: 'Drone',
-        tag: 'drone',
-        price: 1000,
-        inCart: 0
-    },
-];
+function addItem(item) {
+    const itemHTML = '<div class="row item">\n' +
+        ' <div class="col-md-6 img">\n' +
+        '       <img class="item img" src="./PhotoStudio/' + item.image + '>\n' +
+        ' </div> \n' +
+        '   <div class="col-md-6 services">\n' +
+        '       <h4 class="productName">' + item.productName + '</h4>\n' +
+        '       <p class="details">' + item.description + '</p>\n' +
+        '       <button type="button" class="add-cart" onclick="addToCart()">Add to cart</button>\n' +
+        '   </div>\n' +
+        ' </div>';
+    itemsContainer.innerHTML += itemHTML;
+}
+
+function fetchData() {
+    fetch('./data.json')
+        .then((response) => response.json()) // transforms data into json
+        .then(response => {
+            // reset html so page is blank
+            itemsContainer.innerHTML = '';
+            for (let i = 0; i < response.data.length; i++) {
+                addItem(response.data[i]);
+            }
+            const dataJson = JSON.stringify(response.data);
+            localStorage.setItem('services', dataJson);
+        });
+}
+
+// render if offline
+function loadDataFromStorage() {
+    if (localStorage.getItem('services')) {
+        const dataJson = localStorage.getItem('colservicesors');
+        const data = JSON.parse(dataJson);
+        // reset html
+        itemsContainer.innerHTML = '';
+        for (let i = 0; i < data.length; i++) {
+            addItem(data[i]);
+        }
+    }
+}
+
+// let products = [
+
+//     {
+//         name: 'Wedding Package',
+//         tag: 'weddingpackage',
+//         price: 5000,
+//         inCart: 0
+//     },
+//     {
+//         name: 'Architectural',
+//         tag: 'architectural',
+//         price: 1500,
+//         inCart: 0
+//     },
+//     {
+//         name: 'Studio Photoshoot',
+//         tag: 'studio',
+//         price: 1000,
+//         inCart: 0
+//     },
+//     {
+//         name: 'Outdoor Photoshoot',
+//         tag: 'outdoor',
+//         price: 1000,
+//         inCart: 0
+//     },
+//     {
+//         name: 'Product',
+//         tag: 'product',
+//         price: 200,
+//         inCart: 0
+//     },
+//     {
+//         name: 'Drone',
+//         tag: 'drone',
+//         price: 1000,
+//         inCart: 0
+//     },
+// ];
 
 for (let i = 0; i < carts.length; i++) {
     carts[i].addEventListener('click', () => {
@@ -370,6 +413,39 @@ function addToCart() {
     alert("Added to cart !");
 }
 
+
+
+
+// function addItem(item) {
+//     const itemHTML = '<div class="card" style="width: 18rem;">\n' +
+//         '    <div class="card-body">\n' +
+//         '        <h5 class="card-title">' + item.name + '</h5>\n' +
+//         '        <p class="card-text">' + item.pantone_value + '</p>\n' +
+//         '        <div style="background:' + item.color + ';">' + item.color + '</div>\n' +
+//         '    </div>\n' +
+//         '</div>\n' +
+//         '<br/>';
+//     const itemsContainer = document.querySelector("#list-items");
+//     itemsContainer.innerHTML += itemHTML;
+// }
+
+// function fetchColorsList() {
+//     fetch('https://reqres.in/api/data')
+//         .then((response) => response.json()) // transforms data into json
+//         .then(response => {
+//             // reset html so page is blank
+//             itemsContainer.innerHTML = '';
+//             for (let i = 0; i < response.data.length; i++) {
+//                 addItem(response.data[i]);
+//             }
+//             const colorsJson = JSON.stringify(response.data);
+//             localStorage.setItem('colors', colorsJson);
+//         });
+// }
+
+
 // when page loads, this will run and check it
 onLoadCartNumbers();
 displayCart();
+fetchData();
+loadDataFromStorage();
