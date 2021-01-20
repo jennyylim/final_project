@@ -1,87 +1,87 @@
 let carts = document.querySelectorAll('.add-cart');
 
-const itemsContainer = document.getElementById("row_item");
+// const itemsContainer = document.getElementById("row_item");
 
-function addItem(item) {
-    const itemHTML = '<div class="row item">\n' +
-        ' <div class="col-md-6 img">\n' +
-        '       <img class="item img" src="./PhotoStudio/' + item.image + '>\n' +
-        ' </div> \n' +
-        '   <div class="col-md-6 services">\n' +
-        '       <h4 class="productName">' + item.productName + '</h4>\n' +
-        '       <p class="details">' + item.description + '</p>\n' +
-        '       <button type="button" class="add-cart" onclick="addToCart()">Add to cart</button>\n' +
-        '   </div>\n' +
-        ' </div>';
-    itemsContainer.innerHTML += itemHTML;
-}
+// function addItem(item) {
+//     const itemHTML = '<div class="row item">\n' +
+//         ' <div class="col-md-6 img">\n' +
+//         '       <img class="item img" src="./PhotoStudio/' + item.image + '>\n' +
+//         ' </div> \n' +
+//         '   <div class="col-md-6 services">\n' +
+//         '       <h4 class="productName">' + item.productName + '</h4>\n' +
+//         '       <p class="details">' + item.description + '</p>\n' +
+//         '       <button type="button" class="add-cart" onclick="addToCart()">Add to cart</button>\n' +
+//         '   </div>\n' +
+//         ' </div>';
+//     itemsContainer.innerHTML += itemHTML;
+// }
 
-function fetchData() {
-    fetch('./data.json')
-        .then((response) => response.json()) // transforms data into json
-        .then(response => {
-            // reset html so page is blank
-            itemsContainer.innerHTML = '';
-            for (let i = 0; i < response.data.length; i++) {
-                addItem(response.data[i]);
-            }
-            const dataJson = JSON.stringify(response.data);
-            localStorage.setItem('services', dataJson);
-        });
-}
+// function fetchData() {
+//     fetch('./data.json')
+//         .then((response) => response.json()) // transforms data into json
+//         .then(response => {
+//             // reset html so page is blank
+//             itemsContainer.innerHTML = '';
+//             for (let i = 0; i < response.data.length; i++) {
+//                 addItem(response.data[i]);
+//             }
+//             const dataJson = JSON.stringify(response.data);
+//             localStorage.setItem('services', dataJson);
+//         });
+// }
 
-// render if offline
-function loadDataFromStorage() {
-    if (localStorage.getItem('services')) {
-        const dataJson = localStorage.getItem('colservicesors');
-        const data = JSON.parse(dataJson);
-        // reset html
-        itemsContainer.innerHTML = '';
-        for (let i = 0; i < data.length; i++) {
-            addItem(data[i]);
-        }
-    }
-}
+// // render if offline
+// function loadDataFromStorage() {
+//     if (localStorage.getItem('services')) {
+//         const dataJson = localStorage.getItem('colservicesors');
+//         const data = JSON.parse(dataJson);
+//         // reset html
+//         itemsContainer.innerHTML = '';
+//         for (let i = 0; i < data.length; i++) {
+//             addItem(data[i]);
+//         }
+//     }
+// }
 
-// let products = [
+let products = [
 
-//     {
-//         name: 'Wedding Package',
-//         tag: 'weddingpackage',
-//         price: 5000,
-//         inCart: 0
-//     },
-//     {
-//         name: 'Architectural',
-//         tag: 'architectural',
-//         price: 1500,
-//         inCart: 0
-//     },
-//     {
-//         name: 'Studio Photoshoot',
-//         tag: 'studio',
-//         price: 1000,
-//         inCart: 0
-//     },
-//     {
-//         name: 'Outdoor Photoshoot',
-//         tag: 'outdoor',
-//         price: 1000,
-//         inCart: 0
-//     },
-//     {
-//         name: 'Product',
-//         tag: 'product',
-//         price: 200,
-//         inCart: 0
-//     },
-//     {
-//         name: 'Drone',
-//         tag: 'drone',
-//         price: 1000,
-//         inCart: 0
-//     },
-// ];
+    {
+        name: 'Wedding Package',
+        tag: 'weddingpackage',
+        price: 5000,
+        inCart: 0
+    },
+    {
+        name: 'Architectural',
+        tag: 'architectural',
+        price: 1500,
+        inCart: 0
+    },
+    {
+        name: 'Studio Photoshoot',
+        tag: 'studio',
+        price: 1000,
+        inCart: 0
+    },
+    {
+        name: 'Outdoor Photoshoot',
+        tag: 'outdoor',
+        price: 1000,
+        inCart: 0
+    },
+    {
+        name: 'Product',
+        tag: 'product',
+        price: 200,
+        inCart: 0
+    },
+    {
+        name: 'Drone',
+        tag: 'drone',
+        price: 1000,
+        inCart: 0
+    },
+];
 
 for (let i = 0; i < carts.length; i++) {
     carts[i].addEventListener('click', () => {
@@ -177,7 +177,7 @@ function displayCart() {
                 productContainer.innerHTML += `
                 <div class="product">
                     <i class="far fa-times-circle fa-2x"></i>
-                    <img class="cart-img" src="./PhotoStudio/wedding4.jpg">  
+                    <img class="cart-img" src="./PhotoStudio/${item.tag}.jpg">  
                     <span class="sm-hide">${item.name}</span>
                 </div>
            <div class="price sm-hide">$${item.price}.00</div>
@@ -447,5 +447,5 @@ function addToCart() {
 // when page loads, this will run and check it
 onLoadCartNumbers();
 displayCart();
-fetchData();
-loadDataFromStorage();
+// fetchData();
+// loadDataFromStorage();
