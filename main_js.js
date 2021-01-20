@@ -1,89 +1,83 @@
 let carts = document.querySelectorAll('.add-cart');
+// const itemsContainer = document.getElementById("row_item");
 
-const itemsContainer = document.getElementById("row_item");
+// -----following codes to fetch data.json, then JSON.parse to localStorage and JSON.stringify------
+// function addItem(item) {
+//     const itemHTML = '<div class="row item">\n' +
+//         '<div class="col-md-6 img">\n' +
+//         '      <img class="item img" src="PhotoStudio/' + item.tag + '>\n' +
+//         '</div>\n' +
+//         '<div class="col-md-6 services">\n' +
+//         '      <h4 class="productName">' + item.productName + '</h4>\n' +
+//         '      <p class="details">' + item.description + '</p>\n' +
+//         '      <p class="details">' + item.price + '</p>\n' +
+//         '</div>\n' +
+//         '</div>'
+// itemsContainer.innerHTML += itemHTML;
+// }
 
-function fetchData() {
-    fetch('./data.json')
-        .then((response) => response.json()) // transforms data into json
-        .then(response => {
-            // reset html so page is blank
-            itemsContainer.innerHTML = '';
-            for (let i = 0; i < response.data.length; i++) {
-                addItem(response.data[i]);
-            }
-            const dataJson = JSON.stringify(response.data);
-            localStorage.setItem('services', dataJson);
-        });
-}
+// function fetchProducts() {
+//     fetch('./data.json')
+//         .then((response) => response.json())
+//         .then((json) => {
+//             console.log(json);
+//         });
 
-function addItem(item) {
-    const itemHTML = '<div class="row item">\n' +
-        ' <div class="col-md-6 img">\n' +
-        '       <img class="item img" src="./PhotoStudio/' + item.image + '>\n' +
-        ' </div> \n' +
-        '   <div class="col-md-6 services">\n' +
-        '       <h4 class="productName">' + item.productName + '</h4>\n' +
-        '       <p class="details">' + item.description + '</p>\n' +
-        '       <button type="button" class="add-cart" onclick="addToCart()">Add to cart</button>\n' +
-        '   </div>\n' +
-        ' </div>';
-    itemsContainer.innerHTML += itemHTML;
-}
-
-
-
-// render if offline
-function loadDataFromStorage() {
-    if (localStorage.getItem('services')) {
-        const dataJson = localStorage.getItem('colservicesors');
-        const data = JSON.parse(dataJson);
-        // reset html
-        itemsContainer.innerHTML = '';
-        for (let i = 0; i < data.length; i++) {
-            addItem(data[i]);
-        }
+let products = [{
+        productId: 1,
+        productName: "Wedding package",
+        productCode: "DLJ-01",
+        description: "We fly you to your dream destination in style. Let our team make the all the arrangements while you look your best for your special day, glamourous and effervescent.",
+        price: 5000,
+        image: "weddingPackage",
+        imageUrl: "https://www.dusitthanilagunasingapore.com/public/wedding/images/Wedding_CelebrationsParties2_1100x750.jpg"
+    },
+    {
+        productId: 2,
+        productName: "Architectural",
+        productCode: "DLJ-02",
+        description: "We shoot onsite with our vast array lenses suited for capturing landscapes and large scales buildings intended for commercial purposes for your websites or brochures.",
+        price: 1000,
+        image: "architectural",
+        imageUrl: "https://images.squarespace-cdn.com/content/v1/50bce2dfe4b01f474524eb8e/1456799367252-43BJ5ESZ9AASFMJAUDEX/ke17ZwdGBToddI8pDm48kNnVUdz0LMwmPl0bUEdqt1x7gQa3H78H3Y0txjaiv_0fDoOvxcdMmMKkDsyUqMSsMWxHk725yiiHCCLfrh8O1z5QPOohDIaIeljMHgDF5CVlOqpeNLcJ80NK65_fV7S1UY9kEpUDRFtF-iv7XsWZcTVPg8yOhK8LaOZuZMsCG_7vVVjs4-Y4P_C8EhABwvP0NA/image-asset.jpeg"
+    },
+    {
+        productId: 3,
+        productName: "Studio",
+        productCode: "DLJ-03",
+        description: "Whether it is for a corporate profiles,  ",
+        price: 2000,
+        image: "studio",
+        imageUrl: "https://ohdearstudio.com.sg/wp-content/uploads/2020/11/Extended-Big-family-Photoshoot.jpg"
+    },
+    {
+        productId: 4,
+        productName: "Drone",
+        productCode: "DLJ-04",
+        description: "<Insert description for Drone>",
+        price: 3500,
+        image: "drone",
+        imageUrl: "https://ak.picdn.net/shutterstock/videos/12740642/thumb/1.jpg"
+    },
+    {
+        productId: 5,
+        productName: "Outdoor",
+        productCode: "DLJ-05",
+        description: "<Insert description for Outdoor>",
+        price: 3000,
+        image: "outdoor",
+        imageUrl: "https://singaporemotherhood.com/articles/wp-content/uploads/2019/01/Summer-and-family.jpg"
+    },
+    {
+        productId: 6,
+        productName: "Product",
+        productCode: "DLJ-06",
+        description: "<Insert description for Product >",
+        price: 4500,
+        image: "product",
+        imageUrl: "https://www.hoopstudio.com.sg/wp-content/uploads/2018/10/stylized-photo-9.jpg"
     }
-}
-
-// let products = [
-
-//     {
-//         name: 'Wedding Package',
-//         tag: 'weddingpackage',
-//         price: 5000,
-//         inCart: 0
-//     },
-//     {
-//         name: 'Architectural',
-//         tag: 'architectural',
-//         price: 1500,
-//         inCart: 0
-//     },
-//     {
-//         name: 'Studio Photoshoot',
-//         tag: 'studio',
-//         price: 1000,
-//         inCart: 0
-//     },
-//     {
-//         name: 'Outdoor Photoshoot',
-//         tag: 'outdoor',
-//         price: 1000,
-//         inCart: 0
-//     },
-//     {
-//         name: 'Product',
-//         tag: 'product',
-//         price: 200,
-//         inCart: 0
-//     },
-//     {
-//         name: 'Drone',
-//         tag: 'drone',
-//         price: 1000,
-//         inCart: 0
-//     },
-// ];
+]
 
 for (let i = 0; i < carts.length; i++) {
     carts[i].addEventListener('click', () => {
@@ -175,10 +169,10 @@ function displayCart() {
 
     if (cartItems && productContainer) {
         productContainer.innerHTML = '',
-            Object.values(cartItems).map((item, index) => {
+            Object.values(cartItems).map((item) => {
                 productContainer.innerHTML += `
                 <div class="product">
-                    <i class="far fa-times-circle fa-2x"></i>
+                    <i class="delete far fa-times-circle fa-2x"></i>
                     <img class="cart-img" src="./PhotoStudio/${item.tag}.jpg">  
                     <span class="sm-hide">${item.name}</span>
                 </div>
@@ -247,13 +241,13 @@ function manageQuantity() {
 }
 
 function deleteButtons() {
-    let deleteButtons = document.querySelectorAll('.product far.fa-times');
+    let deleteButtons = document.querySelectorAll('.product .delete');
     let productNumbers = localStorage.getItem('cartNumbers');
     let cartCost = localStorage.getItem("totalCost");
     let cartItems = localStorage.getItem('productsInCart');
     cartItems = JSON.parse(cartItems);
     let productName;
-    console.log(cartItems);
+    // console.log(cartItems);
 
     for (let i = 0; i < deleteButtons.length; i++) {
         deleteButtons[i].addEventListener('click', () => {
@@ -416,38 +410,6 @@ function addToCart() {
 }
 
 
-
-
-// function addItem(item) {
-//     const itemHTML = '<div class="card" style="width: 18rem;">\n' +
-//         '    <div class="card-body">\n' +
-//         '        <h5 class="card-title">' + item.name + '</h5>\n' +
-//         '        <p class="card-text">' + item.pantone_value + '</p>\n' +
-//         '        <div style="background:' + item.color + ';">' + item.color + '</div>\n' +
-//         '    </div>\n' +
-//         '</div>\n' +
-//         '<br/>';
-//     const itemsContainer = document.querySelector("#list-items");
-//     itemsContainer.innerHTML += itemHTML;
-// }
-
-// function fetchColorsList() {
-//     fetch('https://reqres.in/api/data')
-//         .then((response) => response.json()) // transforms data into json
-//         .then(response => {
-//             // reset html so page is blank
-//             itemsContainer.innerHTML = '';
-//             for (let i = 0; i < response.data.length; i++) {
-//                 addItem(response.data[i]);
-//             }
-//             const colorsJson = JSON.stringify(response.data);
-//             localStorage.setItem('colors', colorsJson);
-//         });
-// }
-
-
 // when page loads, this will run and check it
 onLoadCartNumbers();
 displayCart();
-// fetchData();
-// loadDataFromStorage();

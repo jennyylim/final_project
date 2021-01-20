@@ -3,6 +3,10 @@
     padding: 0px;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 
 /* -------------------- NAV BAR--------------------*/
 
@@ -237,9 +241,10 @@ h2 {
                          
 ************************************************************   - */
 
-.container.services>.row {
+.container.services {
     margin-top: 30px;
     padding: 40px;
+    /* border: 5px solid rgb(66, 66, 66); */
     border-radius: 20px;
     -webkit-border-radius: 20px;
     -moz-border-radius: 20px;
@@ -265,19 +270,14 @@ h1 {
 
 .row.item {
     padding: 30px;
+    margin-bottom: 50px;
     background-color: white;
     border: 5px solid rgb(66, 66, 66);
 }
 
 .item.img {
-    width: 600px;
+    max-width: 600px;
     padding: 20px;
-    border-radius: 20px;
-    ;
-    -webkit-border-radius: 20px;
-    -moz-border-radius: 20px;
-    -ms-border-radius: 20px;
-    -o-border-radius: 20px;
 }
 
 .col-md-6.services {
@@ -318,8 +318,24 @@ h1 {
     -o-border-radius: 10px;
 }
 
+.add-cart:hover {
+    color: rgb(15, 15, 15);
+    background-color: white;
+    transition: all 5;
+    -webkit-transition: all 5;
+    -moz-transition: all 5;
+    -ms-transition: all 5;
+    -o-transition: all 5;
+}
+
 i.fas span {
     font-size: 30px;
+}
+
+.btn.btn-outline-dark.top {
+    display: block;
+    margin: 40px auto;
+    scroll-behavior: smooth;
 }
 
 
@@ -332,9 +348,16 @@ i.fas span {
 
 /* - ************************************************************  
 
-                         SIGN IN PAGE
+                         SIGN UP PAGE
                          
 ************************************************************   - */
+
+.signup {
+    font-family: 'Playfair Display', serif;
+    font-size: 20px;
+    margin: 25px auto;
+    padding: 5px 50px;
+}
 
 
 /* - ************************************************************  
