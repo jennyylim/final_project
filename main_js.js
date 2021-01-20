@@ -1,44 +1,83 @@
 let carts = document.querySelectorAll('.add-cart');
+// const itemsContainer = document.getElementById("row_item");
 
-let products = [
+// -----following codes to fetch data.json, then JSON.parse to localStorage and JSON.stringify------
+// function addItem(item) {
+//     const itemHTML = '<div class="row item">\n' +
+//         '<div class="col-md-6 img">\n' +
+//         '      <img class="item img" src="PhotoStudio/' + item.tag + '>\n' +
+//         '</div>\n' +
+//         '<div class="col-md-6 services">\n' +
+//         '      <h4 class="productName">' + item.productName + '</h4>\n' +
+//         '      <p class="details">' + item.description + '</p>\n' +
+//         '      <p class="details">' + item.price + '</p>\n' +
+//         '</div>\n' +
+//         '</div>'
+// itemsContainer.innerHTML += itemHTML;
+// }
 
-    {
-        name: 'Wedding Package',
-        tag: 'weddingpackage',
+// function fetchProducts() {
+//     fetch('./data.json')
+//         .then((response) => response.json())
+//         .then((json) => {
+//             console.log(json);
+//         });
+
+let products = [{
+        productId: 1,
+        productName: "Wedding package",
+        productCode: "DLJ-01",
+        description: "We fly you to your dream destination in style. Let our team make the all the arrangements while you look your best for your special day, glamourous and effervescent.",
         price: 5000,
-        inCart: 0
+        image: "weddingPackage",
+        imageUrl: "https://www.dusitthanilagunasingapore.com/public/wedding/images/Wedding_CelebrationsParties2_1100x750.jpg"
     },
     {
-        name: 'Architectural',
-        tag: 'architectural',
-        price: 1500,
-        inCart: 0
-    },
-    {
-        name: 'Studio Photoshoot',
-        tag: 'studio',
+        productId: 2,
+        productName: "Architectural",
+        productCode: "DLJ-02",
+        description: "We shoot onsite with our vast array lenses suited for capturing landscapes and large scales buildings intended for commercial purposes for your websites or brochures.",
         price: 1000,
-        inCart: 0
+        image: "architectural",
+        imageUrl: "https://images.squarespace-cdn.com/content/v1/50bce2dfe4b01f474524eb8e/1456799367252-43BJ5ESZ9AASFMJAUDEX/ke17ZwdGBToddI8pDm48kNnVUdz0LMwmPl0bUEdqt1x7gQa3H78H3Y0txjaiv_0fDoOvxcdMmMKkDsyUqMSsMWxHk725yiiHCCLfrh8O1z5QPOohDIaIeljMHgDF5CVlOqpeNLcJ80NK65_fV7S1UY9kEpUDRFtF-iv7XsWZcTVPg8yOhK8LaOZuZMsCG_7vVVjs4-Y4P_C8EhABwvP0NA/image-asset.jpeg"
     },
     {
-        name: 'Outdoor Photoshoot',
-        tag: 'outdoor',
-        price: 1000,
-        inCart: 0
+        productId: 3,
+        productName: "Studio",
+        productCode: "DLJ-03",
+        description: "Whether it is for a corporate profiles,  ",
+        price: 2000,
+        image: "studio",
+        imageUrl: "https://ohdearstudio.com.sg/wp-content/uploads/2020/11/Extended-Big-family-Photoshoot.jpg"
     },
     {
-        name: 'Product',
-        tag: 'product',
-        price: 200,
-        inCart: 0
+        productId: 4,
+        productName: "Drone",
+        productCode: "DLJ-04",
+        description: "<Insert description for Drone>",
+        price: 3500,
+        image: "drone",
+        imageUrl: "https://ak.picdn.net/shutterstock/videos/12740642/thumb/1.jpg"
     },
     {
-        name: 'Drone',
-        tag: 'drone',
-        price: 1000,
-        inCart: 0
+        productId: 5,
+        productName: "Outdoor",
+        productCode: "DLJ-05",
+        description: "<Insert description for Outdoor>",
+        price: 3000,
+        image: "outdoor",
+        imageUrl: "https://singaporemotherhood.com/articles/wp-content/uploads/2019/01/Summer-and-family.jpg"
     },
-];
+    {
+        productId: 6,
+        productName: "Product",
+        productCode: "DLJ-06",
+        description: "<Insert description for Product >",
+        price: 4500,
+        image: "product",
+        imageUrl: "https://www.hoopstudio.com.sg/wp-content/uploads/2018/10/stylized-photo-9.jpg"
+    }
+]
 
 for (let i = 0; i < carts.length; i++) {
     carts[i].addEventListener('click', () => {
@@ -130,11 +169,11 @@ function displayCart() {
 
     if (cartItems && productContainer) {
         productContainer.innerHTML = '',
-            Object.values(cartItems).map((item, index) => {
+            Object.values(cartItems).map((item) => {
                 productContainer.innerHTML += `
                 <div class="product">
-                    <i class="far fa-times-circle fa-2x"></i>
-                    <img class="cart-img" src="./PhotoStudio/wedding4.jpg">  
+                    <i class="delete far fa-times-circle fa-2x"></i>
+                    <img class="cart-img" src="./PhotoStudio/${item.tag}.jpg">  
                     <span class="sm-hide">${item.name}</span>
                 </div>
            <div class="price sm-hide">$${item.price}.00</div>
@@ -202,13 +241,13 @@ function manageQuantity() {
 }
 
 function deleteButtons() {
-    let deleteButtons = document.querySelectorAll('.product ion-icon');
+    let deleteButtons = document.querySelectorAll('.product .delete');
     let productNumbers = localStorage.getItem('cartNumbers');
     let cartCost = localStorage.getItem("totalCost");
     let cartItems = localStorage.getItem('productsInCart');
     cartItems = JSON.parse(cartItems);
     let productName;
-    console.log(cartItems);
+    // console.log(cartItems);
 
     for (let i = 0; i < deleteButtons.length; i++) {
         deleteButtons[i].addEventListener('click', () => {
@@ -262,22 +301,32 @@ function store() {
 
     } else if (!pw.match(lowerCaseLetters)) {
         alert('please add 1 lowercase letter');
-    }
-    else { alert('Account Created') };
+    } else { alert('Account Created') };
 
     let stored_users = JSON.parse(localStorage.getItem('users'));
 
     if (stored_users) {
         stored_users.push({
-            name: firstName, lastName, userId: userName, password: pw, add: address,
-            country: country, state: state, postal: postal
+            name: firstName,
+            lastName,
+            userId: userName,
+            password: pw,
+            add: address,
+            country: country,
+            state: state,
+            postal: postal
         });
         localStorage.setItem('users', JSON.stringify(stored_users));
-    }
-    else {
+    } else {
         localStorage.setItem('users', JSON.stringify([{
-            name: firstName, lastName, userId: userName, password: pw, add: address,
-            country: country, state: state, postal: postal
+            name: firstName,
+            lastName,
+            userId: userName,
+            password: pw,
+            add: address,
+            country: country,
+            state: state,
+            postal: postal
         }]));
 
     }
@@ -294,8 +343,7 @@ function check() {
             alert('You are logged in ' + usrName.value);
             window.location.href = "http://127.0.0.1:5500/final_project/home.html";
 
-        }
-        else {
+        } else {
             return alert('Access denied. Valid username and password is required.');
         }
     }
@@ -356,6 +404,12 @@ function check() {
 //      }
 // }
 // }
+
+function addToCart() {
+    alert("Added to cart !");
+}
+
+
 // when page loads, this will run and check it
 onLoadCartNumbers();
 displayCart();
