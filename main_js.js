@@ -146,9 +146,6 @@ function setItems(product) {
 function totalCost(product, action) {
     let cart = localStorage.getItem("totalCost");
 
-    console.log("My cartCost is", cartCost);
-    console.log(typeof cartCost);
-
     if (action) {
         cart = parseInt(cart);
 
@@ -172,6 +169,7 @@ function displayCart() {
 
     let productContainer = document.querySelector('.products');
 
+
     if (cartItems && productContainer) {
         productContainer.innerHTML = '',
             Object.values(cartItems).map((item) => {
@@ -182,13 +180,11 @@ function displayCart() {
                     <span class="sm-hide">${item.productName}</span>
                 </div>
            <div class="price sm-hide">$${item.price}.00</div>
-
            <div class="quantity">
             <i class="decrease far fa-arrow-alt-circle-left fa-2x"></i>
             <span>${item.inCart}</span>
            <i class="increase far fa-arrow-alt-circle-right fa-2x"></i>
            </div>
-
            <div class="total">$${item.inCart * item.price}.00</div>`;
             });
 
@@ -205,8 +201,8 @@ function displayCart() {
 }
 
 function manageQuantity() {
-    let decreaseButtons = document.querySelectorAll('.decrease');
-    let increaseButtons = document.querySelectorAll('.increase');
+    let decreaseButtons = document.querySelectorAll('i.decrease');
+    let increaseButtons = document.querySelectorAll('i.increase');
     let currentQuantity = 0;
     let currentProduct = '';
     let cartItems = localStorage.getItem('productsInCart');
