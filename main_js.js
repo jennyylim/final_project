@@ -1,27 +1,4 @@
 let carts = document.querySelectorAll('.add-cart');
-// const itemsContainer = document.getElementById("row_item");
-
-// -----following codes to fetch data.json, then JSON.parse to localStorage and JSON.stringify------
-// function addItem(item) {
-//     const itemHTML = '<div class="row item">\n' +
-//         '<div class="col-md-6 img">\n' +
-//         '      <img class="item img" src="PhotoStudio/' + item.tag + '>\n' +
-//         '</div>\n' +
-//         '<div class="col-md-6 services">\n' +
-//         '      <h4 class="productName">' + item.productName + '</h4>\n' +
-//         '      <p class="details">' + item.description + '</p>\n' +
-//         '      <p class="details">' + item.price + '</p>\n' +
-//         '</div>\n' +
-//         '</div>'
-// itemsContainer.innerHTML += itemHTML;
-// }
-
-// function fetchProducts() {
-//     fetch('./data.json')
-//         .then((response) => response.json())
-//         .then((json) => {
-//             console.log(json);
-//         });
 
 let products = [{
         productId: 1,
