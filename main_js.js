@@ -30,7 +30,8 @@ let products = [{
         description: "We fly you to your dream destination in style. Let our team make the all the arrangements while you look your best for your special day, glamourous and effervescent.",
         price: 5000,
         image: "weddingPackage",
-        imageUrl: "https://www.dusitthanilagunasingapore.com/public/wedding/images/Wedding_CelebrationsParties2_1100x750.jpg"
+        inCart: 0
+
     },
     {
         productId: 2,
@@ -39,16 +40,16 @@ let products = [{
         description: "We shoot onsite with our vast array lenses suited for capturing landscapes and large scales buildings intended for commercial purposes for your websites or brochures.",
         price: 1000,
         image: "architectural",
-        imageUrl: "https://images.squarespace-cdn.com/content/v1/50bce2dfe4b01f474524eb8e/1456799367252-43BJ5ESZ9AASFMJAUDEX/ke17ZwdGBToddI8pDm48kNnVUdz0LMwmPl0bUEdqt1x7gQa3H78H3Y0txjaiv_0fDoOvxcdMmMKkDsyUqMSsMWxHk725yiiHCCLfrh8O1z5QPOohDIaIeljMHgDF5CVlOqpeNLcJ80NK65_fV7S1UY9kEpUDRFtF-iv7XsWZcTVPg8yOhK8LaOZuZMsCG_7vVVjs4-Y4P_C8EhABwvP0NA/image-asset.jpeg"
+        inCart: 0
     },
     {
         productId: 3,
         productName: "Studio",
         productCode: "DLJ-03",
-        description: "Whether it is for a corporate profiles,  ",
+        description: "Whether it is for a corporate profiles",
         price: 2000,
         image: "studio",
-        imageUrl: "https://ohdearstudio.com.sg/wp-content/uploads/2020/11/Extended-Big-family-Photoshoot.jpg"
+        inCart: 0
     },
     {
         productId: 4,
@@ -57,7 +58,7 @@ let products = [{
         description: "<Insert description for Drone>",
         price: 3500,
         image: "drone",
-        imageUrl: "https://ak.picdn.net/shutterstock/videos/12740642/thumb/1.jpg"
+        inCart: 0
     },
     {
         productId: 5,
@@ -66,7 +67,7 @@ let products = [{
         description: "<Insert description for Outdoor>",
         price: 3000,
         image: "outdoor",
-        imageUrl: "https://singaporemotherhood.com/articles/wp-content/uploads/2019/01/Summer-and-family.jpg"
+        inCart: 0
     },
     {
         productId: 6,
@@ -75,9 +76,10 @@ let products = [{
         description: "<Insert description for Product >",
         price: 4500,
         image: "product",
-        imageUrl: "https://www.hoopstudio.com.sg/wp-content/uploads/2018/10/stylized-photo-9.jpg"
+        inCart: 0
     }
-]
+];
+
 
 for (let i = 0; i < carts.length; i++) {
     carts[i].addEventListener('click', () => {
@@ -115,8 +117,8 @@ function cartNumbers(product, action) {
 }
 
 function setItems(product) {
-    let productNumbers = localStorage.getItem('cartNumbers');
-    productNumbers = parseInt(productNumbers);
+    // let productNumbers = localStorage.getItem('cartNumbers');
+    // productNumbers = parseInt(productNumbers);
     let cartItems = localStorage.getItem('productsInCart');
     cartItems = JSON.parse(cartItems);
 
@@ -143,6 +145,9 @@ function setItems(product) {
 
 function totalCost(product, action) {
     let cart = localStorage.getItem("totalCost");
+
+    console.log("My cartCost is", cartCost);
+    console.log(typeof cartCost);
 
     if (action) {
         cart = parseInt(cart);
@@ -171,7 +176,7 @@ function displayCart() {
         productContainer.innerHTML = '',
             Object.values(cartItems).map((item) => {
                 productContainer.innerHTML += `
-                <div class="product">
+                <div class="products">
                     <i class="delete far fa-times-circle fa-2x"></i>
                     <img class="cart-img" src="./PhotoStudio/${item.image}.jpg">  
                     <span class="sm-hide">${item.productName}</span>
