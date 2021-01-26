@@ -1,11 +1,6 @@
 let carts = document.querySelectorAll('.add-cart');
 
-
-// # FINAL - once everything works, minimally works, I then go on and change this products.json to something
-// similar to my final project project. And i should already commit my code before proceed to #FINA
-
-// #4. make sure that MY json has name, tag, price and inCart
-let products = [{
+const products = [{
         name: "Wedding package",
         tag: "weddingPackage",
         price: 5000,
@@ -58,9 +53,6 @@ function onLoadCartNumbers() {
 }
 
 function cartNumbers(product, action) {
-    // to check what product is added to cart 
-    // console.log("the product clicked is", product)
-
     let productNumbers = localStorage.getItem('cartNumbers');
     productNumbers = parseInt(productNumbers);
 
@@ -77,18 +69,13 @@ function cartNumbers(product, action) {
     } else {
         localStorage.setItem("cartNumbers", 1);
         document.querySelector('.cart span').textContent = 1;
-        // test console.log if action is not running
-        console.log("action not running");
     }
-    // function that does not exists/ not created yet 
     setItems(product);
 }
 
 function setItems(product) {
-
     // let productNumbers = localStorage.getItem('cartNumbers');
     // productNumbers = parseInt(productNumbers);
-
     let cartItems = localStorage.getItem('productsInCart');
     cartItems = JSON.parse(cartItems);
 
@@ -139,7 +126,6 @@ function displayCart() {
 
     let productContainer = document.querySelector('.products');
 
-
     if (cartItems && productContainer) {
         productContainer.innerHTML = '',
             Object.values(cartItems).map((item) => {
@@ -171,8 +157,8 @@ function displayCart() {
 }
 
 function manageQuantity() {
-    let decreaseButtons = document.querySelectorAll('decrease');
-    let increaseButtons = document.querySelectorAll('increase');
+    let decreaseButtons = document.querySelectorAll('.decrease');
+    let increaseButtons = document.querySelectorAll('.increase');
     let currentQuantity = 0;
     let currentProduct = '';
     let cartItems = localStorage.getItem('productsInCart');
@@ -180,7 +166,7 @@ function manageQuantity() {
 
     for (let i = 0; i < increaseButtons.length; i++) {
         decreaseButtons[i].addEventListener('click', () => {
-            console.log(cartItems);
+            // console.log(cartItems);
             currentQuantity = decreaseButtons[i].parentElement.querySelector('span').textContent;
             // console.log(currentQuantity);
             currentProduct = decreaseButtons[i].parentElement.previousElementSibling.previousElementSibling.querySelector('span').textContent.toLocaleLowerCase().replace(/ /g, '').trim();
@@ -202,8 +188,7 @@ function manageQuantity() {
             currentProduct = increaseButtons[i].parentElement.previousElementSibling.previousElementSibling.querySelector('span').textContent.toLocaleLowerCase().replace(/ /g, '').trim();
             console.log(currentProduct);
 
-            // error is here
-            // cartItems[currentProduct].inCart += 1;
+            cartItems[currentProduct].inCart += 1;
             cartNumbers(cartItems[currentProduct]);
             totalCost(cartItems[currentProduct]);
             localStorage.setItem('productsInCart', JSON.stringify(cartItems));
@@ -213,7 +198,7 @@ function manageQuantity() {
 }
 
 function deleteButtons() {
-    let deleteButtons = document.querySelectorAll('.product delete');
+    let deleteButtons = document.querySelectorAll('.product .delete');
     let productNumbers = localStorage.getItem('cartNumbers');
     let cartCost = localStorage.getItem("totalCost");
     let cartItems = localStorage.getItem('productsInCart');
