@@ -1,62 +1,47 @@
 let carts = document.querySelectorAll('.add-cart');
 
-let products = [{
-        productId: 1,
-        productName: "Wedding package",
-        productCode: "DLJ-01",
-        description: "We fly you to your dream destination in style. Let our team make the all the arrangements while you look your best for your special day, glamourous and effervescent.",
-        price: 5000,
-        image: "weddingPackage",
-        inCart: 0
 
+// # FINAL - once everything works, minimally works, I then go on and change this products.json to something
+// similar to my final project project. And i should already commit my code before proceed to #FINA
+
+// #4. make sure that MY json has name, tag, price and inCart
+let products = [{
+        name: "Wedding package",
+        tag: "weddingPackage",
+        price: 5000,
+        inCart: 0
     },
     {
-        productId: 2,
-        productName: "Architectural",
-        productCode: "DLJ-02",
-        description: "We shoot onsite with our vast array lenses suited for capturing landscapes and large scales buildings intended for commercial purposes for your websites or brochures.",
+        name: "Architectural",
+        tag: "architectural",
         price: 1000,
-        image: "architectural",
         inCart: 0
     },
     {
-        productId: 3,
-        productName: "Studio",
-        productCode: "DLJ-03",
-        description: "Whether it is for a corporate profiles",
+        name: "Studio",
+        tag: "studio",
         price: 2000,
-        image: "studio",
         inCart: 0
     },
     {
-        productId: 4,
-        productName: "Drone",
-        productCode: "DLJ-04",
-        description: "<Insert description for Drone>",
+        name: "Drone",
+        tag: "drone",
         price: 3500,
-        image: "drone",
         inCart: 0
     },
     {
-        productId: 5,
-        productName: "Outdoor",
-        productCode: "DLJ-05",
-        description: "<Insert description for Outdoor>",
+        name: "Outdoor",
+        tag: "outdoor",
         price: 3000,
-        image: "outdoor",
         inCart: 0
     },
     {
-        productId: 6,
-        productName: "Product",
-        productCode: "DLJ-06",
-        description: "<Insert description for Product >",
+        name: "Product",
+        tag: "product",
         price: 4500,
-        image: "product",
         inCart: 0
     }
 ];
-
 
 for (let i = 0; i < carts.length; i++) {
     carts[i].addEventListener('click', () => {
@@ -73,6 +58,9 @@ function onLoadCartNumbers() {
 }
 
 function cartNumbers(product, action) {
+    // to check what product is added to cart 
+    // console.log("the product clicked is", product)
+
     let productNumbers = localStorage.getItem('cartNumbers');
     productNumbers = parseInt(productNumbers);
 
@@ -89,13 +77,18 @@ function cartNumbers(product, action) {
     } else {
         localStorage.setItem("cartNumbers", 1);
         document.querySelector('.cart span').textContent = 1;
+        // test console.log if action is not running
+        console.log("action not running");
     }
+    // function that does not exists/ not created yet 
     setItems(product);
 }
 
 function setItems(product) {
+
     // let productNumbers = localStorage.getItem('cartNumbers');
     // productNumbers = parseInt(productNumbers);
+
     let cartItems = localStorage.getItem('productsInCart');
     cartItems = JSON.parse(cartItems);
 
@@ -151,10 +144,10 @@ function displayCart() {
         productContainer.innerHTML = '',
             Object.values(cartItems).map((item) => {
                 productContainer.innerHTML += `
-                <div class="products">
+                <div class="product">
                     <i class="delete far fa-times-circle fa-2x"></i>
-                    <img class="cart-img" src="./PhotoStudio/${item.image}.jpg">  
-                    <span class="sm-hide">${item.productName}</span>
+                    <img class="cart-img" src="./PhotoStudio/${item.tag}.jpg">  
+                    <span class="sm-hide">${item.name}</span>
                 </div>
            <div class="price sm-hide">$${item.price}.00</div>
            <div class="quantity">
@@ -178,8 +171,8 @@ function displayCart() {
 }
 
 function manageQuantity() {
-    let decreaseButtons = document.querySelectorAll('i.decrease');
-    let increaseButtons = document.querySelectorAll('i.increase');
+    let decreaseButtons = document.querySelectorAll('decrease');
+    let increaseButtons = document.querySelectorAll('increase');
     let currentQuantity = 0;
     let currentProduct = '';
     let cartItems = localStorage.getItem('productsInCart');
@@ -187,7 +180,7 @@ function manageQuantity() {
 
     for (let i = 0; i < increaseButtons.length; i++) {
         decreaseButtons[i].addEventListener('click', () => {
-            // console.log(cartItems);
+            console.log(cartItems);
             currentQuantity = decreaseButtons[i].parentElement.querySelector('span').textContent;
             // console.log(currentQuantity);
             currentProduct = decreaseButtons[i].parentElement.previousElementSibling.previousElementSibling.querySelector('span').textContent.toLocaleLowerCase().replace(/ /g, '').trim();
@@ -209,7 +202,8 @@ function manageQuantity() {
             currentProduct = increaseButtons[i].parentElement.previousElementSibling.previousElementSibling.querySelector('span').textContent.toLocaleLowerCase().replace(/ /g, '').trim();
             console.log(currentProduct);
 
-            cartItems[currentProduct].inCart += 1;
+            // error is here
+            // cartItems[currentProduct].inCart += 1;
             cartNumbers(cartItems[currentProduct]);
             totalCost(cartItems[currentProduct]);
             localStorage.setItem('productsInCart', JSON.stringify(cartItems));
@@ -219,7 +213,7 @@ function manageQuantity() {
 }
 
 function deleteButtons() {
-    let deleteButtons = document.querySelectorAll('.product .delete');
+    let deleteButtons = document.querySelectorAll('.product delete');
     let productNumbers = localStorage.getItem('cartNumbers');
     let cartCost = localStorage.getItem("totalCost");
     let cartItems = localStorage.getItem('productsInCart');
