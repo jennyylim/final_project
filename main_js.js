@@ -1,83 +1,42 @@
 let carts = document.querySelectorAll('.add-cart');
-// const itemsContainer = document.getElementById("row_item");
 
-// -----following codes to fetch data.json, then JSON.parse to localStorage and JSON.stringify------
-// function addItem(item) {
-//     const itemHTML = '<div class="row item">\n' +
-//         '<div class="col-md-6 img">\n' +
-//         '      <img class="item img" src="PhotoStudio/' + item.tag + '>\n' +
-//         '</div>\n' +
-//         '<div class="col-md-6 services">\n' +
-//         '      <h4 class="productName">' + item.productName + '</h4>\n' +
-//         '      <p class="details">' + item.description + '</p>\n' +
-//         '      <p class="details">' + item.price + '</p>\n' +
-//         '</div>\n' +
-//         '</div>'
-// itemsContainer.innerHTML += itemHTML;
-// }
-
-// function fetchProducts() {
-//     fetch('./data.json')
-//         .then((response) => response.json())
-//         .then((json) => {
-//             console.log(json);
-//         });
-
-let products = [{
-        productId: 1,
-        productName: "Wedding package",
-        productCode: "DLJ-01",
-        description: "We fly you to your dream destination in style. Let our team make the all the arrangements while you look your best for your special day, glamourous and effervescent.",
+const products = [{
+        name: "Wedding package",
+        tag: "weddingPackage",
         price: 5000,
-        image: "weddingPackage",
-        imageUrl: "https://www.dusitthanilagunasingapore.com/public/wedding/images/Wedding_CelebrationsParties2_1100x750.jpg"
+        inCart: 0
     },
     {
-        productId: 2,
-        productName: "Architectural",
-        productCode: "DLJ-02",
-        description: "We shoot onsite with our vast array lenses suited for capturing landscapes and large scales buildings intended for commercial purposes for your websites or brochures.",
+        name: "Architectural",
+        tag: "architectural",
         price: 1000,
-        image: "architectural",
-        imageUrl: "https://images.squarespace-cdn.com/content/v1/50bce2dfe4b01f474524eb8e/1456799367252-43BJ5ESZ9AASFMJAUDEX/ke17ZwdGBToddI8pDm48kNnVUdz0LMwmPl0bUEdqt1x7gQa3H78H3Y0txjaiv_0fDoOvxcdMmMKkDsyUqMSsMWxHk725yiiHCCLfrh8O1z5QPOohDIaIeljMHgDF5CVlOqpeNLcJ80NK65_fV7S1UY9kEpUDRFtF-iv7XsWZcTVPg8yOhK8LaOZuZMsCG_7vVVjs4-Y4P_C8EhABwvP0NA/image-asset.jpeg"
+        inCart: 0
     },
     {
-        productId: 3,
-        productName: "Studio",
-        productCode: "DLJ-03",
-        description: "Whether it is for a corporate profiles,  ",
+        name: "Studio",
+        tag: "studio",
         price: 2000,
-        image: "studio",
-        imageUrl: "https://ohdearstudio.com.sg/wp-content/uploads/2020/11/Extended-Big-family-Photoshoot.jpg"
+        inCart: 0
     },
     {
-        productId: 4,
-        productName: "Drone",
-        productCode: "DLJ-04",
-        description: "<Insert description for Drone>",
+        name: "Drone",
+        tag: "drone",
         price: 3500,
-        image: "drone",
-        imageUrl: "https://ak.picdn.net/shutterstock/videos/12740642/thumb/1.jpg"
+        inCart: 0
     },
     {
-        productId: 5,
-        productName: "Outdoor",
-        productCode: "DLJ-05",
-        description: "<Insert description for Outdoor>",
+        name: "Outdoor",
+        tag: "outdoor",
         price: 3000,
-        image: "outdoor",
-        imageUrl: "https://singaporemotherhood.com/articles/wp-content/uploads/2019/01/Summer-and-family.jpg"
+        inCart: 0
     },
     {
-        productId: 6,
-        productName: "Product",
-        productCode: "DLJ-06",
-        description: "<Insert description for Product >",
+        name: "Product",
+        tag: "product",
         price: 4500,
-        image: "product",
-        imageUrl: "https://www.hoopstudio.com.sg/wp-content/uploads/2018/10/stylized-photo-9.jpg"
+        inCart: 0
     }
-]
+];
 
 for (let i = 0; i < carts.length; i++) {
     carts[i].addEventListener('click', () => {
@@ -177,13 +136,11 @@ function displayCart() {
                     <span class="sm-hide">${item.name}</span>
                 </div>
            <div class="price sm-hide">$${item.price}.00</div>
-
            <div class="quantity">
             <i class="decrease far fa-arrow-alt-circle-left fa-2x"></i>
             <span>${item.inCart}</span>
            <i class="increase far fa-arrow-alt-circle-right fa-2x"></i>
            </div>
-
            <div class="total">$${item.inCart * item.price}.00</div>`;
             });
 
