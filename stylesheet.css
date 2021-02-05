@@ -284,7 +284,19 @@ h1 {
     padding: 20px 60px;
 }
 
-.productName {
+
+/* .productName {
+    font-family: 'Playfair Display', serif;
+    font-size: 30px;
+    width: 500px;
+    padding: 30px 0;
+    color: rgb(37, 37, 37);
+} */
+
+
+/* ############# DEBUG COPY - SERVICES PAGE ############# */
+
+.serviceName {
     font-family: 'Playfair Display', serif;
     font-size: 30px;
     width: 500px;
@@ -521,4 +533,39 @@ div.total {
     .basketTotalContainer {
         padding-right: 8%;
     }
+}
+
+
+/* - ************************************************************  
+
+                         WEBPAGE MEDIA QUERIES
+
+************************************************************   - */
+
+For mobile @media only screen and (max-device-width: 480px) {
+    .navbar {
+        width: 350px;
+        font-size: 10px;
+    }
+    .navbar li a {
+        font-size: 20%;
+    }
+    /* div#header {
+        background-image: url(media-queries-phone.jpg);
+        height: 93px;
+        position: relative;
+    }
+    div#header h1 {
+        font-size: 140%;
+    }
+    #content {
+        float: none;
+        width: 100%;
+    }
+    #navigation {
+        float: none;
+        width: auto; */
+}
+
+
 }
