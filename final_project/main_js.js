@@ -301,8 +301,6 @@ function check() {
     }
 }
 
-
-
 // function check(){
 //     var storedName = localStorage.getItem('userId');
 //     var storedPw = localStorage.getItem('password');
@@ -356,6 +354,47 @@ function check() {
 //      }
 // }
 // }
+
+
+// for retrieval of data from json file. 
+const itemsContainer = document.getElementById("list-items");
+
+function addItem(item) {
+    const itemHTML = '<div class="card" style="width: 18rem;">\n' +
+        '    <div class="card-body">\n' +
+        '        <h5 class="card-title">' + item.productName + '</h5>\n' +
+        '        <p class="card-text">' + item.description + '</p>\n' +
+        '        <div style="background:' + item.price + ';">' + item.price + '</div>\n' +
+        '    </div>\n' +
+        '</div>\n' +
+        '<br/>';
+    const itemsContainer = document.querySelector("#list-items");
+    itemsContainer.innerHTML += itemHTML;
+
+    function fetchPriceList() {
+        fetch('js/data.json')
+            .then((response) => response.json()) // transforms data into json
+            .then(response => {
+                for (let i = 0; i < response.length; i++) {
+    
+                addItem(response[i]);}
+    
+    
+                const priceJson = JSON.stringify(response.data);
+                localStorage.setItem('price', priceJson);
+            })
+    }
+    
+    function loadPriceFromStorage() {
+        if (localStorage.getItem('price')) {
+            const priceJson = localStorage.getItem('price');
+            const colors = JSON.parse(priceJson);
+            itemsContainer.innerHTML = '';
+            for (let i = 0; i < productId.length; i++) {
+                addItem(price[i]);
+            }
+        }
+    }}
 // when page loads, this will run and check it
 onLoadCartNumbers();
 displayCart();
