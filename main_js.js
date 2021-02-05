@@ -1,12 +1,44 @@
 let carts = document.querySelectorAll('.add-cart');
 
-const products = [{
-        name: "Wedding package",
-        tag: "weddingPackage",
-        price: 5000,
-        inCart: 0
-    },
-    {
+// const products = [{
+//         name: "Wedding Package",
+//         tag: "weddingPackage",
+//         price: 5000,
+//         inCart: 0
+//     },
+//     {
+//         name: "Architectural",
+//         tag: "architectural",
+//         price: 1000,
+//         inCart: 0
+//     },
+//     {
+//         name: "Studio",
+//         tag: "studio",
+//         price: 2000,
+//         inCart: 0
+//     },
+//     {
+//         name: "Drone",
+//         tag: "drone",
+//         price: 3500,
+//         inCart: 0
+//     },
+//     {
+//         name: "Outdoor",
+//         tag: "outdoor",
+//         price: 3000,
+//         inCart: 0
+//     },
+//     {
+//         name: "Product",
+//         tag: "product",
+//         price: 4500,
+//         inCart: 0
+//     }
+// ];
+
+let products = [{
         name: "Architectural",
         tag: "architectural",
         price: 1000,
@@ -34,6 +66,12 @@ const products = [{
         name: "Product",
         tag: "product",
         price: 4500,
+        inCart: 0
+    },
+    {
+        name: "Wedding",
+        tag: "weddingPackage",
+        price: 5000,
         inCart: 0
     }
 ];
