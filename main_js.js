@@ -68,12 +68,12 @@ let products = [{
         price: 4500,
         inCart: 0
     },
-    {
-        name: "Wedding",
-        tag: "weddingPackage",
-        price: 5000,
-        inCart: 0
-    }
+    // {
+    //     name: "Wedding",
+    //     tag: "weddingPackage",
+    //     price: 5000,
+    //     inCart: 0
+    // }
 ];
 
 for (let i = 0; i < carts.length; i++) {
