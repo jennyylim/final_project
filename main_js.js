@@ -39,41 +39,47 @@ let carts = document.querySelectorAll('.add-cart');
 // ];
 
 let products = [{
+        name: "Wedding Package",
+        tag: "weddingpackage",
+        img: "wedding",
+        price: 5000,
+        inCart: 0
+    },
+    {
         name: "Architectural",
         tag: "architectural",
+        img: "architectural",
         price: 1000,
         inCart: 0
     },
     {
         name: "Studio",
         tag: "studio",
+        img: "studio",
         price: 2000,
         inCart: 0
     },
     {
         name: "Drone",
         tag: "drone",
+        img: "drone",
         price: 3500,
         inCart: 0
     },
     {
         name: "Outdoor",
         tag: "outdoor",
+        img: "outdoor",
         price: 3000,
         inCart: 0
     },
     {
         name: "Product",
         tag: "product",
+        img: "product",
         price: 4500,
         inCart: 0
-    },
-    // {
-    //     name: "Wedding",
-    //     tag: "weddingPackage",
-    //     price: 5000,
-    //     inCart: 0
-    // }
+    }
 ];
 
 for (let i = 0; i < carts.length; i++) {
@@ -170,7 +176,7 @@ function displayCart() {
                 productContainer.innerHTML += `
                 <div class="product">
                     <i class="delete far fa-times-circle fa-2x"></i>
-                    <img class="cart-img" src="./PhotoStudio/${item.tag}.jpg">  
+                    <img class="cart-img" src="./PhotoStudio/${item.img}.jpg">  
                     <span class="sm-hide">${item.name}</span>
                 </div>
            <div class="price sm-hide">$${item.price}.00</div>
