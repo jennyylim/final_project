@@ -276,7 +276,7 @@ h1 {
 }
 
 .item.img {
-    max-width: 600px;
+    width: 600px;
     padding: 20px;
 }
 
@@ -542,7 +542,10 @@ div.total {
 
 ************************************************************   - */
 
-For mobile @media only screen and (max-device-width: 480px) {
+
+/* For mobile */
+
+@media only screen and (max-device-width: 480px) {
     .navbar {
         width: 350px;
         font-size: 10px;
