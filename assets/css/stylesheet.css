@@ -131,7 +131,24 @@ a {
     padding: 5px;
 }
 
+.column>img {
+    transition: transform 1s;
+    -webkit-transition: transform 1s;
+    -moz-transition: transform 1s;
+    -ms-transition: transform 1s;
+    -o-transition: transform 1s;
+}
+
 .column>img:hover {
+    transform: scale(2);
+    -webkit-transform: scale(2);
+    -moz-transform: scale(2);
+    -ms-transform: scale(2);
+    -o-transform: scale(2);
+}
+
+
+/* .column>img:hover {
     transform: scale(2) rotateZ(0deg);
     -moz-transform: scale(2) rotateZ(0deg);
     -webkit-transform: scale(2) rotateZ(0deg);
@@ -143,6 +160,7 @@ a {
     margin-top: -100px;
     display: relative;
     -ms-transform: scale(2) rotateZ(0deg);
+    -ms-transition: all 1s ease-in-out 0s;
 }
 
 .column>img:hover {
@@ -153,7 +171,7 @@ a {
     margin-top: -25%;
     left: 230px;
     z-index: 50;
-}
+} */
 
 
 /* -------------------- FOOTER--------------------*/
@@ -293,9 +311,6 @@ h1 {
     color: rgb(37, 37, 37);
 } */
 
-
-/* ############# DEBUG COPY - SERVICES PAGE ############# */
-
 .serviceName {
     font-family: 'Playfair Display', serif;
     font-size: 30px;
@@ -308,13 +323,19 @@ h1 {
     font-family: 'Noto Serif SC', serif;
     font-size: 20px;
     width: 500px;
-    padding: 30px 0 60px 0;
+    padding: 30px 0;
 }
 
-.productPrice {
+.hr2 {
+    border: 2px solid rgb(34, 34, 34);
+    margin-right: 100%;
+}
+
+.service.price {
     font-family: 'Noto Serif SC', serif;
-    font-size: 30px;
-    padding: 20px 10px;
+    font-size: 25px;
+    width: 500px;
+    padding: 30px 0 60px 0;
 }
 
 .add-cart {
@@ -328,16 +349,16 @@ h1 {
     -moz-border-radius: 10px;
     -ms-border-radius: 10px;
     -o-border-radius: 10px;
+    transition: all 0.3 ease 5s;
+    -webkit-transition: all 0.3 ease s;
+    -moz-transition: all 0.3 ease s;
+    -ms-transition: all 0.3 ease s;
+    -o-transition: all 0.3 ease s;
 }
 
 .add-cart:hover {
     color: rgb(15, 15, 15);
     background-color: white;
-    transition: all 5;
-    -webkit-transition: all 5;
-    -moz-transition: all 5;
-    -ms-transition: all 5;
-    -o-transition: all 5;
 }
 
 i.fas span {
@@ -474,7 +495,7 @@ span.sm-hide {
 
 .product .cart-img {
     width: 75px;
-    margin-right: 10px;
+    /* margin-right: 10px; */
 }
 
 div.price.sm-hide {
