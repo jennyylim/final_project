@@ -32,7 +32,8 @@ colOffset3 {
 
 .card {
     border: 1px solid rgba(0,0,0,.125);
-    border-radius: 40px;
+    border-radius: 20px;
+    box-shadow: 3px 5px 10px rgba(180, 180, 180, .5);
 }
 
 /*Modal modes*/
@@ -122,3 +123,4 @@ colOffset3 {
         width: 100%;
     }
 }
+

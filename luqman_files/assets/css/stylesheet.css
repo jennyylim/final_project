@@ -3,6 +3,10 @@
     padding: 0px;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 
 /* -------------------- NAV BAR--------------------*/
 
@@ -75,7 +79,7 @@
 
 /* -------------------- CAROUSEL --------------------*/
 
-.greybox {
+.container>.row {
     margin-top: 30px;
     background-color: rgb(230, 230, 230);
     border-radius: 20px;
@@ -127,7 +131,24 @@ a {
     padding: 5px;
 }
 
+.column>img {
+    transition: transform 1s;
+    -webkit-transition: transform 1s;
+    -moz-transition: transform 1s;
+    -ms-transition: transform 1s;
+    -o-transition: transform 1s;
+}
+
 .column>img:hover {
+    transform: scale(2);
+    -webkit-transform: scale(2);
+    -moz-transform: scale(2);
+    -ms-transform: scale(2);
+    -o-transform: scale(2);
+}
+
+
+/* .column>img:hover {
     transform: scale(2) rotateZ(0deg);
     -moz-transform: scale(2) rotateZ(0deg);
     -webkit-transform: scale(2) rotateZ(0deg);
@@ -139,6 +160,7 @@ a {
     margin-top: -100px;
     display: relative;
     -ms-transform: scale(2) rotateZ(0deg);
+    -ms-transition: all 1s ease-in-out 0s;
 }
 
 .column>img:hover {
@@ -149,14 +171,14 @@ a {
     margin-top: -25%;
     left: 230px;
     z-index: 50;
-}
+} */
 
 
 /* -------------------- FOOTER--------------------*/
 
 .footer {
     padding: 30px 0px;
-    background-image: url("../images/footer2.png");
+    background-image: url(/PhotoStudio/footer2.png);
     background-size: cover;
     border-radius: 20px;
     -webkit-border-radius: 20px;
@@ -237,17 +259,18 @@ h2 {
                          
 ************************************************************   - */
 
-/* .container.services>.row { */
-    /* margin-top: 30px; */
-    /* padding: 40px; */
-    /* border-radius: 20px; */
-    /* -webkit-border-radius: 20px; */
-    /* -moz-border-radius: 20px; */
-    /* -ms-border-radius: 20px; */
-    /* -o-border-radius: 20px; */
-/* } */
+.container.services {
+    margin-top: 30px;
+    padding: 40px;
+    /* border: 5px solid rgb(66, 66, 66); */
+    border-radius: 20px;
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+    -ms-border-radius: 20px;
+    -o-border-radius: 20px;
+}
 
-.row.title {
+.row_title {
     margin-top: 30px;
     padding: 30px;
 }
@@ -265,6 +288,7 @@ h1 {
 
 .row.item {
     padding: 30px;
+    margin-bottom: 50px;
     background-color: white;
     border: 5px solid rgb(66, 66, 66);
 }
@@ -272,19 +296,22 @@ h1 {
 .item.img {
     width: 600px;
     padding: 20px;
-    border-radius: 20px;
-    ;
-    -webkit-border-radius: 20px;
-    -moz-border-radius: 20px;
-    -ms-border-radius: 20px;
-    -o-border-radius: 20px;
 }
 
 .col-md-6.services {
     padding: 20px 60px;
 }
 
-.productName {
+
+/* .productName {
+    font-family: 'Playfair Display', serif;
+    font-size: 30px;
+    width: 500px;
+    padding: 30px 0;
+    color: rgb(37, 37, 37);
+} */
+
+.serviceName {
     font-family: 'Playfair Display', serif;
     font-size: 30px;
     width: 500px;
@@ -296,13 +323,19 @@ h1 {
     font-family: 'Noto Serif SC', serif;
     font-size: 20px;
     width: 500px;
-    padding: 30px 0 60px 0;
+    padding: 30px 0;
 }
 
-.productPrice {
+.hr2 {
+    border: 2px solid rgb(34, 34, 34);
+    margin-right: 100%;
+}
+
+.service.price {
     font-family: 'Noto Serif SC', serif;
-    font-size: 30px;
-    padding: 20px 10px;
+    font-size: 25px;
+    width: 500px;
+    padding: 30px 0 60px 0;
 }
 
 .add-cart {
@@ -316,10 +349,26 @@ h1 {
     -moz-border-radius: 10px;
     -ms-border-radius: 10px;
     -o-border-radius: 10px;
+    transition: all 0.3 ease 5s;
+    -webkit-transition: all 0.3 ease s;
+    -moz-transition: all 0.3 ease s;
+    -ms-transition: all 0.3 ease s;
+    -o-transition: all 0.3 ease s;
+}
+
+.add-cart:hover {
+    color: rgb(15, 15, 15);
+    background-color: white;
 }
 
 i.fas span {
     font-size: 30px;
+}
+
+.btn.btn-outline-dark.top {
+    display: block;
+    margin: 40px auto;
+    scroll-behavior: smooth;
 }
 
 
@@ -332,9 +381,16 @@ i.fas span {
 
 /* - ************************************************************  
 
-                         SIGN IN PAGE
+                         SIGN UP PAGE
                          
 ************************************************************   - */
+
+.signup {
+    font-family: 'Playfair Display', serif;
+    font-size: 20px;
+    margin: 25px auto;
+    padding: 5px 50px;
+}
 
 
 /* - ************************************************************  
@@ -437,9 +493,9 @@ span.sm-hide {
     max-width: 800px;
 }
 
-.products .cart-img {
+.product .cart-img {
     width: 75px;
-    margin-right: 10px;
+    /* margin-right: 10px; */
 }
 
 div.price.sm-hide {
@@ -498,4 +554,42 @@ div.total {
     .basketTotalContainer {
         padding-right: 8%;
     }
+}
+
+
+/* - ************************************************************  
+
+                         WEBPAGE MEDIA QUERIES
+
+************************************************************   - */
+
+
+/* For mobile */
+
+@media only screen and (max-device-width: 480px) {
+    .navbar {
+        width: 350px;
+        font-size: 10px;
+    }
+    .navbar li a {
+        font-size: 20%;
+    }
+    /* div#header {
+        background-image: url(media-queries-phone.jpg);
+        height: 93px;
+        position: relative;
+    }
+    div#header h1 {
+        font-size: 140%;
+    }
+    #content {
+        float: none;
+        width: 100%;
+    }
+    #navigation {
+        float: none;
+        width: auto; */
+}
+
+
 }

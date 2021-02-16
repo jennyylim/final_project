@@ -24,7 +24,7 @@ html {
     cursor: pointer;
 }
 
-.company-logo-about>img {
+.company-logo-about>a>img {
     display: block;
     margin-left: auto;
     margin-right: auto;
@@ -108,6 +108,9 @@ a {
     border-radius: 20px;
     box-shadow: 0 0 0 .12rem rgba(180, 180, 180, .25);
     background-color: rgb(250, 250, 250);
+    width: 750px;
+    position: relative;
+    right: 20px;
 
 }
 .btn-check:focus + .btn, .btn:focus {
@@ -121,10 +124,10 @@ a {
     /*font-family: 'Playfair Display', serif;*/
     font-family: 'Quattrocento Sans', sans-serif;
     font-weight: 500;
-    font-size: 28px;
+    font-size: 22px;
     /*background-color: rgb(220, 220, 220);*/
     color: rgb(123, 123, 123);
-    /*padding: 30px 50px;*/
+    padding: 0px 11px;
     list-style-type: none;
     text-decoration: none;
     transition: all 0.3s ease 0s;
@@ -158,8 +161,13 @@ a:hover {
 }
 /*needing to hook below attrib into bootstrap resource*/
 .nav-item {
-    padding: 10px 25px;
+    padding: 15px 25px;
+    /*padding: 10px 25px; OG*/
 
+}
+
+.iconpad {
+    padding:10px;
 }
 /* - ************************************************************
 
