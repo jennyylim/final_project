@@ -372,6 +372,10 @@ function addToCart() {
     alert("Added to cart !");
 }
 
+// ################ TEST FETCH FUNCTION ################
+
+
+
 
 // when page loads, this will run and check it
 onLoadCartNumbers();
