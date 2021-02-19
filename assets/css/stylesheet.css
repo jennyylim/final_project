@@ -1049,6 +1049,12 @@ div.total {
     padding: 50px 20px;
 }
 
+.text-center {
+    font-family: 'Playfair Display', serif;
+    font-size: 35px;
+    padding-bottom: 10px;
+}
+
 .col-xs-12 {
     display: block;
     margin: 0 auto;
