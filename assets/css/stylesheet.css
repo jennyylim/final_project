@@ -253,7 +253,72 @@ h2 {
 ************************************************************   - */
 
 
+<<<<<<< Updated upstream
 /* - ************************************************************  
+=======
+.camera {
+    width: 400px;
+    height: auto;
+    object-fit: cover;
+    padding-top: 50px;
+    margin-left: 50px;
+    opacity: 1;
+}
+
+.camera :hover {
+    opacity: 0.4;
+    transition: all 500ms ease;
+    -webkit-transition: all 500ms ease;
+    -moz-transition: all 500ms ease;
+    -ms-transition: all 500ms ease;
+    -o-transition: all 500ms ease;
+}
+
+.about {
+    font-size: 40px;
+    padding: 40px 0;
+}
+
+.about-text {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 25px;
+    line-height: 55px;
+    padding-top: 35px;
+    text-indent: 80px;
+}
+
+.about-text2 {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 25px;
+    line-height: 55px;
+    padding-bottom: 35px;
+    text-indent: 80px;
+}
+
+
+/* .flex-container.about {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    padding: 0px 20px;
+} */
+
+.card-about {
+    /* width: 500px; */
+}
+
+.about.card-title {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 40px;
+    text-align: center;
+}
+
+.team {}
+
+
+/* - ************************************************************
+>>>>>>> Stashed changes
 
                          SERVICES PAGE
                          
@@ -273,11 +338,14 @@ h2 {
 .row_title {
     margin-top: 30px;
     padding: 30px;
+    font-family: 'Noto Serif SC', serif;
 }
 
 .description {
     text-align: center;
     padding: 10px;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 25px;
 }
 
 h1 {
@@ -289,12 +357,28 @@ h1 {
 .row.item {
     padding: 30px;
     margin-bottom: 50px;
+<<<<<<< Updated upstream
     background-color: white;
     border: 5px solid rgb(66, 66, 66);
 }
 
 .item.img {
     width: 600px;
+=======
+    /* border-style: inset; */
+    /* border: 5px solid rgb(66, 66, 66); */
+    border-radius: 20px;
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+    -ms-border-radius: 20px;
+    -o-border-radius: 20px;
+}
+
+.item-img {
+    display: block;
+    position: absolute;
+    max-width: 550px;
+>>>>>>> Stashed changes
     padding: 20px;
 }
 
@@ -320,8 +404,8 @@ h1 {
 }
 
 .details {
-    font-family: 'Noto Serif SC', serif;
-    font-size: 20px;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 25px;
     width: 500px;
     padding: 30px 0;
 }
@@ -372,14 +456,370 @@ i.fas span {
 }
 
 
+<<<<<<< Updated upstream
 /* - ************************************************************  
+=======
+/* Test and debug copy */
+
+.col-lg-12 {
+    display: inline-block;
+}
+
+
+/* - ************************************************************
+>>>>>>> Stashed changes
 
                          GALLERY PAGE
                          
 ************************************************************   - */
 
 
+<<<<<<< Updated upstream
 /* - ************************************************************  
+=======
+.offset {
+    padding: 20px 0px;
+}
+
+.card-img-top {
+    object-fit: cover;
+    opacity: .85;
+    height: 600px;
+    /*border-radius: 40px;*/
+}
+
+.card {
+    border: 1px solid rgba(0, 0, 0, .125);
+    border-radius: 20px;
+    box-shadow: 3px 5px 10px rgba(180, 180, 180, .5);
+}
+
+
+/*Modal modes*/
+
+
+/*==========================================================*/
+
+#myImg1,
+#myImg2,
+#myImg3,
+#myImg4,
+#myImg5,
+#myImg6 {
+    border-radius: 20px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+#myImg:hover {
+    opacity: 0.7;
+}
+
+
+/* The Modal (background) */
+
+.modal {
+    display: none;
+    /* Hidden by default */
+    position: fixed;
+    /* Stay in place */
+    z-index: 1;
+    /* Sit on top */
+    padding-top: 100px;
+    /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%;
+    /* Full width */
+    height: 100%;
+    /* Full height */
+    overflow: auto;
+    /* Enable scroll if needed */
+    background-color: rgb(0, 0, 0);
+    /* Fallback color */
+    background-color: rgba(0, 0, 0, 0.9);
+    /* Black w/ opacity */
+}
+
+
+/* Modal Content (image) */
+
+.modal-content {
+    margin: auto;
+    display: block;
+    width: 80%;
+    max-width: 700px;
+}
+
+
+/* Caption of Modal Image */
+
+#caption {
+    margin: auto;
+    display: block;
+    width: 80%;
+    max-width: 700px;
+    text-align: center;
+    color: #ccc;
+    padding: 10px 0;
+    height: 150px;
+}
+
+
+/* Add Animation */
+
+.modal-content,
+#caption {
+    -webkit-animation-name: zoom;
+    -webkit-animation-duration: 0.6s;
+    animation-name: zoom;
+    animation-duration: 0.6s;
+}
+
+@-webkit-keyframes zoom {
+    from {
+        -webkit-transform: scale(0)
+    }
+    to {
+        -webkit-transform: scale(1)
+    }
+}
+
+@keyframes zoom {
+    from {
+        transform: scale(0)
+    }
+    to {
+        transform: scale(1)
+    }
+}
+
+
+/* The Close Button */
+
+.close {
+    position: absolute;
+    top: 15px;
+    right: 35px;
+    color: #f1f1f1;
+    font-size: 40px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.close:hover,
+.close:focus {
+    color: #bbb;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+
+/* 100% Image Width on Smaller Screens */
+
+@media only screen and (max-width: 700px) {
+    .modal-content {
+        width: 100%;
+    }
+}
+
+.col-4>img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.bottomLinks {
+    width: 300px;
+    height: 280px;
+    padding: 5px;
+    object-fit: cover;
+    /* display:block; */
+}
+
+
+/*screen wide lines, really wonky for a simple line*/
+
+hr.top {
+    width: 95%;
+    height: 2px;
+    background-color: rgb(24, 23, 23);
+    margin-right: auto;
+    margin-left: auto;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    /*border-width: 2px;
+    border-color: green;*/
+}
+
+
+/*For centering divs*/
+
+.center {
+    margin: auto;
+    width: 60%;
+    padding: 10px;
+    /*border: 5px solid #FFFF00;*/
+}
+
+.splash {
+    border: 1px solid rgb(202, 201, 201);
+    padding: 40px;
+    box-shadow: 5px 5px 10px rgb(184, 183, 183);
+}
+
+.pageformat {
+    padding-left: 10px;
+    padding-right: 10px;
+    width: 90%;
+}
+
+.imgsize {
+    padding: 5px;
+    width: 110%
+}
+
+.imgshift {
+    margin-right: 50px;
+}
+
+.weddingFont {
+    font-family: 'Bilbo Swash Caps', cursive;
+}
+
+.weddingText {
+    padding-left: 5%;
+    padding-top: 0%;
+    padding-bottom: 6%;
+    font-family: 'Raleway', sans-serif;
+    color: rgb(30, 30, 30);
+    text-align: right;
+    font-size: 25px;
+    padding-left: 30px;
+    padding-right: 30px;
+    padding-top: 50px"
+
+}
+
+
+/* .wedding_Text {
+    font-family: 'Noto Serif SC', serif;
+    font-size: 28px;
+    color: rgb(30, 30, 30);
+    text-align: left;
+    padding: 50px 20px 20px 0px;
+    line-height: 60px;
+} */
+
+.pricesCard {
+    font-size: 80%;
+}
+
+hr.prices {
+    padding-top: -20px;
+}
+
+
+/*.quadimg {
+    padding: 20px;
+}*/
+
+.aboutimg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    min-width: 100%;
+    height: 45rem;
+    margin-left: auto;
+    margin-right: auto;
+    object-fit: cover;
+}
+
+
+/* CUSTOMIZE THE CAROUSEL
+-------------------------------------------------- */
+
+
+/* Carousel base class */
+
+.carousel {
+    margin-bottom: 4rem;
+}
+
+
+/* Since positioning the image, we need to help out the caption */
+
+.carousel-caption {
+    bottom: 3rem;
+    z-index: 10;
+}
+
+
+/* Declare heights because of positioning of img element */
+
+.carousel-item {
+    height: 45rem;
+}
+
+.carousel-item>img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    min-width: 100%;
+    height: 45rem;
+}
+
+.carousel-img {
+    object-fit: cover;
+}
+
+
+/* HOVER ELEMENTS
+-------------------------------------------------- */
+
+.overlay {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 5px;
+    right: 0;
+    height: 100%;
+    width: 100%;
+    opacity: 0;
+    transition: .5s ease;
+    background-color: #008CBA;
+    margin: auto;
+    width: 91%;
+    height: 90%
+}
+
+
+/* .containerOverlay { */
+
+
+/* position: relative; */
+
+.container:hover .overlay {
+    opacity: .8;
+}
+
+.linkText {
+    color: white;
+    font-size: 40px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    font-family: 'Raleway', sans-serif;
+    -webkit-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    -o-transform: translate(-50%, -50%);
+}
+
+
+/* - ************************************************************
+>>>>>>> Stashed changes
 
                          SIGN UP PAGE
                          
@@ -582,6 +1022,7 @@ div.total {
     div#header h1 {
         font-size: 140%;
     }
+<<<<<<< Updated upstream
     #content {
         float: none;
         width: 100%;
@@ -593,3 +1034,69 @@ div.total {
 
 
 }
+=======
+}
+
+
+/* - ************************************************************
+
+                         MEDIA QUERIES
+
+************************************************************   - */
+
+
+/* For mobile phones */
+
+@media screen and (max-width: 480px) {
+    .top {
+        width: 80%;
+        margin: auto;
+    }
+    .logo,
+    .company-logo {
+        width: 110%;
+    }
+    .container.carousel>.row>.col,
+    .carousel {
+        width: 100%;
+        height: 50%;
+    }
+    .container-footer,
+    .footer {
+        width: 100%;
+        font-size: 10px;
+    }
+    .address {
+        font-size: 10px;
+        text-align: center;
+        padding: 0;
+    }
+    .col-md-6.right,
+    h3.follow-us,
+    #text {
+        text-align: center;
+        align-items: center;
+        justify-content: center;
+        padding: 0;
+        font-size: 15px;
+    }
+    /* h3.follow-us {
+        font-size: 13px;
+    } */
+    /* h2 {
+        font-size: 10px;
+        text-align: center;
+    } */
+    i.fab {
+        width: 60%;
+        display: inline;
+        align-items: center;
+        justify-content: center;
+    }
+    h2 {
+        font-size: 10px;
+    }
+}
+
+s
+>>>>>>> Stashed changes
