@@ -91,6 +91,8 @@ a {
     scroll-behavior: smooth;
 }
 
+.navbar-toggler-icon {}
+
 
 /*.fas {*/
 
@@ -109,7 +111,7 @@ a {
     border-radius: 20px;
     box-shadow: 0 0 0 .12rem rgba(180, 180, 180, .25);
     background-color: rgb(250, 250, 250);
-    width: 750px;
+    width: 800px;
     position: relative;
     right: 20px;
 }
@@ -123,12 +125,12 @@ a {
 
 .dropdownbtn-txt {
     /*font-family: 'Playfair Display', serif;*/
-    font-family: 'Quattrocento Sans', sans-serif;
+    font-family: 'Montserrat', sans-serif;
     font-weight: 500;
-    font-size: 22px;
+    font-size: 20px;
     /*background-color: rgb(220, 220, 220);*/
     color: rgb(123, 123, 123);
-    padding: 10px 10px;
+    padding: 15px 10px;
     list-style-type: none;
     text-decoration: none;
     transition: all 0.3s ease 0s;
@@ -221,7 +223,7 @@ a:hover {
 
 .row.gallery {
     display: flex;
-    padding: 20px 0px;
+    padding: 30px 0px;
     background-color: white;
 }
 
@@ -258,7 +260,7 @@ a:hover {
 /* -------------------- FOOTER--------------------*/
 
 .footer {
-    padding: 30px 0px;
+    padding: 35px 0px;
     background-image: url("/assets/images/footer2.png");
     background-size: cover;
     border-radius: 20px;
@@ -285,19 +287,19 @@ hr:not([size]) {
 }
 
 .address {
-    font-family: 'Noto Serif SC', serif;
+    font-family: 'Montserrat', sans-serif;
     font-size: 20px;
     padding-left: 80px;
     padding-top: 30px;
 }
 
 .social-media-icon {
-    font-family: 'Noto Serif SC', serif;
+    font-family: 'Montserrat', sans-serif;
     font-size: 20px;
 }
 
 h3.follow-us {
-    font-family: 'Noto Serif SC', serif;
+    font-family: 'Montserrat', sans-serif;
     font-size: 25px;
     padding-top: 30px;
 }
@@ -349,6 +351,46 @@ h2 {
     margin-left: 50px;
 }
 
+.about {
+    font-size: 40px;
+    padding: 40px 0;
+}
+
+.about-text {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 25px;
+    line-height: 55px;
+    padding-top: 35px;
+    text-indent: 80px;
+}
+
+.about-text2 {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 25px;
+    line-height: 55px;
+    padding-bottom: 35px;
+    text-indent: 80px;
+}
+
+
+/* .flex-container.about {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    padding: 0px 20px;
+} */
+
+.card-about {
+    /* width: 500px; */
+}
+
+.about.card-title {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 40px;
+    text-align: center;
+}
+
 
 /* - ************************************************************
 
@@ -373,6 +415,8 @@ h2 {
 }
 
 .description {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 20px;
     text-align: center;
     padding: 10px;
 }
@@ -388,12 +432,12 @@ h1 {
     padding: 30px;
     margin-bottom: 50px;
     background-color: white;
-    border: 5px solid rgb(66, 66, 66);
+    /* border: 5px solid rgb(66, 66, 66);
     border-radius: 20px;
     -webkit-border-radius: 20px;
     -moz-border-radius: 20px;
     -ms-border-radius: 20px;
-    -o-border-radius: 20px;
+    -o-border-radius: 20px; */
 }
 
 .item-img {
@@ -430,21 +474,21 @@ h1 {
 }
 
 .details {
-    font-family: 'Noto Serif SC', serif;
+    font-family: 'Montserrat', sans-serif;
     font-size: 20px;
     width: 500px;
     padding: 30px 0 60px 0;
 }
 
 .service.price {
-    font-family: 'Noto Serif SC', serif;
+    font-family: 'Montserrat', sans-serif;
     font-size: 25px;
     width: 500px;
     padding: 30px 0 60px 0;
 }
 
 .add-cart {
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: 'Montserrat', sans-serif;
     font-size: 20px;
     padding: 10px 25px;
     background-color: rgb(52, 52, 52);
@@ -1130,5 +1174,54 @@ div.total {
     }
     100% {
         color: rgb(0, 236, 0);
+    }
+}
+
+
+/* MEDIA QUERIES */
+
+
+/* For mobile phones */
+
+@media screen and (max-width: 480px) {
+    .top {
+        width: 80%;
+        margin: auto;
+    }
+    .logo,
+    .company-logo {
+        width: 110%;
+    }
+    #carousel {
+        width: 100%;
+        height: 50%;
+    }
+    .container-footer,
+    .footer {
+        width: 100%;
+        font-size: 10px;
+    }
+    .address {
+        font-size: 10px;
+        text-align: center;
+        padding: 0;
+    }
+    .col-md-6.right,
+    h3.follow-us,
+    #text {
+        text-align: center;
+        align-items: center;
+        justify-content: center;
+        padding: 0;
+        font-size: 15px;
+    }
+    i.fab {
+        width: 60%;
+        display: inline;
+        align-items: center;
+        justify-content: center;
+    }
+    h2 {
+        font-size: 10px;
     }
 }
