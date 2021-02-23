@@ -1148,8 +1148,10 @@ div.total {
 }
 
 .hedgehog {
-    padding-left: 30%;
-    padding-right: 70%;
+    /* padding-left: 30%;
+    padding-right: 70%; */
+    display: block;
+    margin: 0 auto;
     padding: 50px auto;
 }
 
