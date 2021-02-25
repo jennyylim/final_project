@@ -276,8 +276,7 @@ a:hover {
 
 .row.gallery {
     display: flex;
-    padding: 30px 0px 30px 0px;
-    ;
+    padding: 50px 0px;
     background-color: white;
 }
 
@@ -338,6 +337,11 @@ hr:not([size]) {
     width: 80%;
     color: rgb(29, 29, 29);
     margin: auto;
+}
+
+.contact-us {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 20px;
 }
 
 .address {
@@ -1274,18 +1278,17 @@ div.total {
         width: 100%;
         font-size: 10px;
     }
-    .address {
-        font-size: 10px;
+    .address,
+    h3.follow-us {
+        font-size: 15px;
         text-align: center;
         padding: 0;
     }
-    .col-md-6.right,
-    h3.follow-us,
-    #text {
-        text-align: center;
+    .col-md-6.right {
+        padding: 0px 110px;
+        margin: 0px;
         align-items: center;
         justify-content: center;
-        padding: 0;
         font-size: 15px;
     }
     i.fab {
@@ -1296,5 +1299,15 @@ div.total {
     }
     h2 {
         font-size: 10px;
+    }
+    .parallax,
+    .parallax2 {
+        height: 500px;
+    }
+    .parallax-text {
+        font-size: 20px;
+    }
+    .text-box {
+        font-size: 15px;
     }
 }

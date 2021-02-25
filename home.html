@@ -97,8 +97,7 @@
 
 
         <div class="text-box">
-            We strive to capture those special moments as they happen. It means being alive to the present, honouring the past, creating real treasures for the future. If you're looking for a photographer who relishes the polished + proper portraits, then you've
-            come to the wrong place. We all about the inbetween moments; we thrive in the details.
+            We strive to capture those special moments as they happen. It means being alive to the present, honouring the past, creating real treasures for the future. We are all about the inbetween moments; we thrive in the details.
         </div>
 
         <div class="parallax2"></div>
@@ -169,7 +168,7 @@
                 </div>
                 <div class="row">
                     <div class="col-md-6 left">
-                        <p class="address">(+65)333400 <br> <a href="mailto:dlj@gmail.com">Send us an email here</a><br> 20 Cecil Street #16-04 EQUITY PLAZA<br>Singapore 049705<br>
+                        <p class="address">(+65)333400 <br> <a class="contact-us" href="mailto:dlj@gmail.com">Contact us here</a><br> 20 Cecil Street #16-04 EQUITY PLAZA<br>Singapore 049705<br>
                         </p>
                     </div>
                     <div class="col-md-6 right">
@@ -177,6 +176,7 @@
                         <a class="social-media-icon" href="https://www.facebook.com/"><i class="fab fa-facebook fa-lg"></i></a>
                         <a class="social-media-icon" href="https://www.twitter.com/"><i class="fab fa-twitter fa-lg"></i></a>
                         <a href="https://www.instagram.com/"><i class="fab fa-instagram fa-lg"></i></a>
+                        <a href="https://wa.me/6590085322"><i class="fab fa-whatsapp fa-lg"></i></a>
                     </div>
                 </div>
                 <div class="row">
@@ -192,6 +192,24 @@
     <script src="assets/js/main_js.js"></script>
     <script src="assets/js/waterfall.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script>
+        function initFreshChat() {
+            window.fcWidget.init({
+                token: "dc12e29a-b0b9-4ced-8059-8e5d56fda4ae",
+                host: "https://wchat.freshchat.com"
+            });
+        }
+
+        function initialize(i, t) {
+            var e;
+            i.getElementById(t) ? initFreshChat() : ((e = i.createElement("script")).id = t, e.async = !0, e.src = "https://wchat.freshchat.com/js/widget.js", e.onload = initFreshChat, i.head.appendChild(e))
+        }
+
+        function initiateCall() {
+            initialize(document, "freshchat-js-sdk")
+        }
+        window.addEventListener ? window.addEventListener("load", initiateCall, !1) : window.attachEvent("load", initiateCall, !1);
+    </script>
 </body>
 
 </html>
