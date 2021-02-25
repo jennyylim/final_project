@@ -276,8 +276,7 @@ a:hover {
 
 .row.gallery {
     display: flex;
-    padding: 30px 0px 30px 0px;
-    ;
+    padding: 50px 0px;
     background-color: white;
 }
 
