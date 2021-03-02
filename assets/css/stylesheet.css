@@ -656,7 +656,7 @@ colOffset3 {
 #myImg4,
 #myImg5,
 #myImg6 {
-    border-radius: 20px;
+    /*border-radius: 20px;*/
     cursor: pointer;
     transition: 0.3s;
 }
@@ -1337,11 +1337,16 @@ div.total {
 }
 
 .minipic {
-    float:right;
-    border:3px solid whitesmoke;
+    position: relative;
+    float: right;
+    border:2px solid whitesmoke;
     border-radius:5px;
-
+    object-fit:cover;
+    width: 60px;
+    height: 40px;
 }
+
+
 /*.founders {*/
 /*    content: url("../../assets/images/architecture/founders.jpg");*/
 /*    !*object-fit:cover;*!*/
@@ -1432,25 +1437,53 @@ html, body{
 .div-break  {
     background-color: #424242;
     color: white;
-    padding:30px;
-    font-size:30px;
+    padding:10px;
+    font-size:20px;
 
 }
 
 .lead2 {
+    font-family: 'Quattrocento Sans', serif;
     display: block;
     margin: 0 auto;
     padding: 20px;
     text-align: center;
-    font-size: 30px;
+    font-size: 25px;
     padding-bottom: 50px;
 }
 
+/*Gallery padding*/
+.gal_pad {
+    padding-left:50px;
+    padding-right: 50px;
 
-@media screen and (max-width: 400px) {
+}
+
+/*iphone*/
+@media only screen and (max-width: 400px) {
     .lead2 {
-        padding-bottom: 100px;
+        padding-bottom: 10px;
         /*margin: 30px;*/
+    }
+    /*.minipic {*/
+    /*    left:72%;*/
+    /*}*/
+    .gal_pad {
+        padding:0px;
+    }
+}
 
+/*ipad*/
+@media only screen and (max-width: 760px) {
+    .lead2 {
+        padding-bottom: 40px;
+        /*margin: 30px;*/
+    }
+    /*.minipic {*/
+    /*    left:86%;*/
+    /*}*/
+    .gal_pad {
+        padding-left:10px;
+        padding-right:10px;
     }
 }

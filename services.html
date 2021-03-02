@@ -7,118 +7,156 @@
     <title>Services</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+
     <!-- CSS only -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC&family=Playfair+Display&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+    <link rel="stylesheet" href="assets/css/stylesheet.css">
+
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&family=Playfair+Display&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/81d30d81d6.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="stylesheet.css">
+
 </head>
 
 <body>
+    <!-- Logo -->
     <div class="container">
         <div class="top">
             <div class="company-logo">
-                <img src="PhotoStudio/logo.png" alt="Company logo">
+                <img src="/assets/images/logo.png" alt="Company logo">
             </div>
         </div>
 
-        <!-- Navigation bar -->
-        <div class="nav_bar">
-            <ul class="navbar">
-                <li><a href="/home.html">HOME</a></li>
-                <li><a href="/about.html">ABOUT</a></li>
-                <li><a href="/services.html">SERVICES</a></li>
-                <li><a href="/gallery.html">GALLERY</a></li>
-                <button type="button" class="btn btn-outline-dark"><a href="login.html">Log in</a></button>
-                <a class="cart" href="/cart.html"><i class="fas fa-shopping-bag fa-2x"><span> 0</span></i></a>
-            </ul>
+        <!-- Navbar -->
+        <nav class="navbar navbar-expand-lg navbar-dark rounded">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample10" aria-controls="navbarsExample10" aria-expanded="false" aria-label="Toggle navigation">
+                <i class="fas fa-bars fa-lg"><span class="navbar-toggler-icon"></span></i>
+        </button>
+
+            <div class="collapse navbar-collapse justify-content-md-center" id="navbarsExample10">
+                <ul class="navbar-nav">
+                    <li class="nav-item active">
+                        <a class="" href="home.html">HOME </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="" href="about.html">ABOUT</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="" href="services.html">SERVICES</a>
+                    </li>
+                    <li>
+                        <a class="nav-item btn dropdown-toggle " data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
+                            PORTFOLIO
+                    </a>
+
+                    </li>
+                    <li><a class="nav-item" href="login.html">LOGIN</a></button>
+                        <!--Suggest use bootstrap modal for this func, but may also be done with onClick event go back page-->
+                    </li>
+                    <li>
+                        <div clas="container"><a class="cart" href="/cart.html"><i class="fas fa-shopping-bag fa-2x iconpad"><span> 0</span></i></a></div>
+                    </li>
+
+                </ul>
+            </div>
+        </nav>
+
+        <div class="collapse" id="collapseExample">
+            <div class="container dropdownbtn dropdownbtn-txt">
+                <div class="row">
+                    <div class="col-sm-auto">
+                        <a class="dropdownbtn-txt" href="gallery_architecture.html">Architecture</a>
+                    </div>
+                    <div class="col-sm-auto">
+                        <a class="dropdownbtn-txt" href="gallery_drone.html">Drone</a>
+                    </div>
+                    <div class="col-sm-auto">
+                        <a class="dropdownbtn-txt" href="gallery_studio.html">Studio</a>
+                    </div>
+                    <div class="col-sm-auto">
+                        <a class="dropdownbtn-txt" href="gallery_product.html">Product</a>
+                    </div>
+                    <div class="col-sm-auto">
+                        <a class="dropdownbtn-txt" href="gallery_outdoors.html">Outdoors</a>
+                    </div>
+                    <div class="col-sm-auto">
+                        <a class="dropdownbtn-txt" href="gallery_wedding.html">Wedding</a>
+                    </div>
+                </div>
+            </div>
         </div>
+
 
         <!-- Page title -->
         <div class="row_title">
             <h1>Services</h1>
-            <p class="description"> // Insert short description of the services provided and something to entice custoemrs //</p>
+            <p class="description">We offer a variety of photography packages to suit many needs.<br> Take a look at our prices below, or discover our other exciting packages</p>
         </div>
 
         <!-- content -->
         <div class="row item">
-            <div class="col-md-6 img">
-                <img class="item img" src="PhotoStudio/wedding3.jpg" alt="Card image cap">
-            </div>
-            <div class="col-md-6 services">
-                <h4 class="productName">Wedding Package</h4>
-                <p class="details">// ITEM DESCRIPTION //</p>
-                <button type="button" class="add-cart" onclick="addToCart()">Add to cart</button>
-            </div>
-        </div>
-
-        <div class="row item ">
-            <div class="col-md-6 services">
-                <h4 class="productName">// PRODUCT NAME //</h4>
-                <p class="details">// ITEM DESCRIPTION //</p>
+            <div class="col-md-6" id="Wedding">
+                <a href="/gallery_wedding.html"><img class="item-img" src="PhotoStudio/wedding.jpg" alt="Card image cap">
+                </a>
+                <h4 class="serviceName">Wedding Package</h4>
+                <p class="details">Lift the memories of your wedding day with pictures taken in exotic locales</p>
+                <hr style="border: 2px solid grey; width:100%;margin-right: 100%;">
+                <p class="service price">$5,000</p>
                 <button type="button" class="add-cart" onclick="addToCart()">Add to cart</button>
             </div>
 
-            <div class="col-md-6 img">
-                <img class="item img " src="PhotoStudio/scenery.jpg " alt="Card image cap ">
-            </div>
-        </div>
-
-        <div class="row item">
-            <div class="col-md-6 img">
-                <img class="item img" src="PhotoStudio/wedding3.jpg" alt="Card image cap">
-            </div>
-            <div class="col-md-6 services">
-                <h4 class="productName">Wedding Package</h4>
-                <p class="details">// ITEM DESCRIPTION //</p>
+            <div class="col-md-6" id="Architecture">
+                <a href="gallery_architecture.html"><img class="item-img" src="PhotoStudio/architectural.jpg " alt="Card image cap "></a>
+                <h4 class="serviceName">Architectural</h4>
+                <p class="details">Impress your clients, or shore up your portfolio with our Architectural photography services.</p>
+                <hr style="border: 2px solid grey; width:100%;margin-right: 100%;">
+                <p class="service price">$1,000</p>
                 <button type="button" class="add-cart" onclick="addToCart()">Add to cart</button>
-            </div>
-        </div>
 
-        <div class="row item ">
-            <div class="col-md-6 services">
-                <h4 class="productName">// PRODUCT NAME //</h4>
-                <p class="details">// ITEM DESCRIPTION //</p>
-                <button type="button" class="add-cart" onclick="addToCart()">Add to cart</button>
-            </div>
-
-            <div class="col-md-6 img">
-                <img class="item img " src="PhotoStudio/scenery.jpg " alt="Card image cap ">
             </div>
         </div>
 
         <div class="row item">
-            <div class="col-md-6 img">
-                <img class="item img" src="PhotoStudio/wedding3.jpg" alt="Card image cap">
+            <div class="col-md-6" id="Studio">
+                <a href="gallery_studio.html"> <img class="item-img" src="PhotoStudio/studio.jpg" alt="Card image cap"></a>
+                <h4 class="serviceName">Studio</h4>
+                <p class="details">Look your best for your headshots and corporate profiles.</p>
+                <hr style="border: 2px solid grey; width:100%;margin-right: 100%;">
+                <p class="service price">$2,000</p>
+                <button type="button" class="add-cart" onclick="addToCart()">Add to cart</button>
             </div>
-            <div class="col-md-6 services">
-                <h4 class="productName">Wedding Package</h4>
-                <p class="details">// ITEM DESCRIPTION //</p>
+
+            <div class="col-md-6" id="Drone">
+                <a href="gallery_drone.html"> <img class="item-img" src="PhotoStudio/drone.jpg " alt="Card image cap "></a>
+                <h4 class="serviceName">Drone</h4>
+                <p class="details">We offer the best drone photography and videography services in Singapore.</p>
+                <hr style="border: 2px solid grey; width:100%;margin-right: 100%;">
+                <p class="service price">$5,000</p>
                 <button type="button" class="add-cart" onclick="addToCart()">Add to cart</button>
             </div>
         </div>
 
-        <div class="row item ">
-            <div class="col-md-6 services">
-                <h4 class="productName">// PRODUCT NAME //</h4>
-                <p class="details">// ITEM DESCRIPTION //</p>
+
+        <div class="row item">
+            <div class="col-md-6" id="Outdoor">
+                <a href="gallery_outdoors.html"> <img class="item-img" src="PhotoStudio/outdoor.jpg" alt="Card image cap"></a>
+                <h4 class="serviceName">Outdoor</h4>
+                <p class="details">Take in dizzying landscapes with our outdoors photography and videography packages</p>
+                <hr style="border: 2px solid grey; width:100%;margin-right: 100%;">
+                <p class="service price">$3,000</p>
                 <button type="button" class="add-cart" onclick="addToCart()">Add to cart</button>
             </div>
 
-            <div class="col-md-6 img">
-                <img class="item img " src="PhotoStudio/scenery.jpg " alt="Card image cap ">
+            <div class="col-md-6" id="Product">
+                <a href="gallery_product.html"><img class="item-img" src="PhotoStudio/product.jpg" alt="Card image cap "></a>
+                <h4 class="serviceName">Product</h4>
+                <p class="details">Have a product to sell? Have its picture professionally taken.</p>
+                <hr style="border: 2px solid grey; width:100%;margin-right: 100%;">
+                <p class="service price">$4,500</p>
+                <button type="button" class="add-cart" onclick="addToCart()">Add to cart</button>
             </div>
         </div>
-
-
-        <!-- Hoping to parse data.JSON file with producs/services into this area -->
-        <!-- <div class="container services">
-            <div class="row item ">
-
-            </div>
-            <button type="button" class="add-cart" onclick="addToCart()">Add to cart</button>
-        </div> -->
 
         <a href="#top"><button type="button" class="btn btn-outline-dark top">Back to top</button></a>
 
@@ -148,8 +186,13 @@
             </div>
         </div>
     </div>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js " integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW " crossorigin="anonymous "></script>
-    <script src="main_js.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
+    <script src="assets/js/main_js.js"></script>
+    <script src=" assets/css/waterfall.css "></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js "></script>
 
 </body>
 
