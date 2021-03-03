@@ -37,6 +37,9 @@ html {
 
 .navbar li a {
     margin: auto;
+    /*font-family: 'Playfair Display', serif;*/
+    /*font-weight: 500;*/
+    /*font-size: 26px;*/
     font-family: 'Playfair Display', serif;
     font-weight: 500;
     font-size: 26px;
@@ -61,6 +64,8 @@ html {
 li,
 a {
     list-style: none;
+    /*font-family: 'Playfair Display', serif;*/
+    /*font-size: 20px;*/
     font-family: 'Playfair Display', serif;
     font-size: 20px;
     color: rgb(49, 49, 49);
@@ -70,6 +75,8 @@ a {
 }
 
 .navbtn {
+    /*font-family: 'Playfair Display', serif;*/
+    /*font-size: 30px;*/
     font-family: 'Playfair Display', serif;
     font-size: 30px;
     margin-top: 10px;
@@ -89,6 +96,10 @@ a {
     display: block;
     margin: 40px auto;
     scroll-behavior: smooth;
+}
+
+.btn {
+    font-size: inherit;
 }
 
 
@@ -119,6 +130,21 @@ a {
     border: 2px solid rgba(5, 5, 5, 0);
     border-radius: 20px;
     box-shadow: 0 0 0 .12rem rgba(100, 100, 100, 0);
+}
+
+
+/*Center button*/
+
+.btn-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.btn-override {
+    border: 1px solid lightgrey;
+    border-radius: 10rem;
 }
 
 .dropdownbtn-txt {
@@ -652,6 +678,7 @@ colOffset3 {
 #myImg4,
 #myImg5,
 #myImg6 {
+    /*border-radius: 20px;*/
     border-radius: 20px;
     cursor: pointer;
     transition: 0.3s;
@@ -1255,6 +1282,12 @@ div.total {
 
 /* For mobile phones */
 
+
+/*----------------------- MEDIA QUERIES -----------------------*/
+
+
+/* For mobile phones */
+
 @media screen and (max-width: 480px) {
     /* home page */
     .top {
@@ -1357,7 +1390,8 @@ div.total {
     div.card-about {
         display: block;
         max-width: 80%;
-        height text-align: center;
+        height: ;
+        text-align: center;
         margin: 0;
     }
     .about.card-title,
@@ -1401,3 +1435,320 @@ div.total {
         width: 250px;
     }
 }
+
+
+/*IMAGES*/
+
+
+/*=============================================================================================*/
+
+.coy-logo {
+    content: url("/assets/images/logo.png");
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 35%;
+    padding: 20px;
+    cursor: pointer;
+}
+
+.indoor_garden {
+    content: url("../../assets/images/architecture/enclosed_garden.jfif");
+}
+
+.reflecting_pool {
+    content: url("../../assets/images/architecture/pool.jpg");
+}
+
+.minipic {
+    position: relative;
+    float: right;
+    border: 2px solid whitesmoke;
+    border-radius: 5px;
+    object-fit: cover;
+    width: 60px;
+    height: 40px;
+}
+
+
+/*.founders {*/
+
+
+/*    content: url("../../assets/images/architecture/founders.jpg");*/
+
+
+/*    object-fit:cover;* */
+
+
+/*    object-position: 20% 20% ;*!*/
+
+
+/*    width:100%;*/
+
+
+/*}*/
+
+
+/*@media only screen and (max-width:400px) {*/
+
+
+/*    .founders {*/
+
+
+/*        content: url("../../assets/images/architecture/founders_port.jpg")*/
+
+
+/*    }*/
+
+
+/*}*/
+
+
+/*FONTS*/
+
+
+/*======================================================================================================*/
+
+.font-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.font1 {
+    font-family: 'Playfair Display', serif;
+    font-weight: 500;
+    font-size: 26px;
+}
+
+.dropdownbtn-txt {
+    font-family: 'Quattrocento Sans', serif;
+    font-weight: 500;
+    font-size: 20px;
+    /*background-color: rgb(220, 220, 220);*/
+    color: rgb(123, 123, 123);
+    padding: 15px 10px;
+    list-style-type: none;
+    text-decoration: none;
+    transition: all 0.3s ease 0s;
+    -webkit-transition: all 0.3s ease 0s;
+    -moz-transition: all 0.3s ease 0s;
+    -ms-transition: all 0.3s ease 0s;
+    -o-transition: all 0.3s ease 0s;
+}
+
+.div-break-txt {
+    font-family: 'Quattrocento Sans', serif;
+}
+
+
+/*Gallery Parallax Effect from https://codepen.io/RenanB/embed/GZeBNg?default-tab=result&theme-id=0 */
+
+
+/*=========================================================================================================*/
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+    /*font-family: 'Amatic SC', cursive;*/
+}
+
+.block {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    overflow: hidden;
+    font-size: 16px;
+}
+
+.block h2 {
+    position: relative;
+    display: block;
+    text-align: center;
+    margin: 0;
+    top: -50%;
+    transform: translateY(-50%);
+    font-size: 10vw;
+    color: white;
+    font-weight: 400;
+}
+
+.img-parallax {
+    width: 100vmax;
+    z-index: -1;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%, 0);
+    pointer-events: none
+}
+
+
+/*Gallery div breaks*/
+
+.div-break {
+    background-color: #424242;
+    color: white;
+    padding: 10px;
+    font-size: 20px;
+}
+
+.lead2 {
+    font-family: 'Quattrocento Sans', serif;
+    display: block;
+    margin: 0 auto;
+    padding: 20px;
+    text-align: center;
+    font-size: 25px;
+    padding-bottom: 50px;
+}
+
+
+/*Gallery padding*/
+
+.gal_pad {
+    padding-left: 50px;
+    padding-right: 50px;
+}
+
+
+/*iphone*/
+
+@media only screen and (max-width: 400px) {
+    .lead2 {
+        padding-bottom: 10px;
+        /*margin: 30px;*/
+    }
+    /*.minipic {*/
+    /*    left:72%;*/
+    /*}*/
+    .gal_pad {
+        padding: 0px;
+    }
+}
+
+
+/*ipad*/
+
+@media only screen and (max-width: 760px) {
+    .lead2 {
+        padding-bottom: 40px;
+        /*margin: 30px;*/
+    }
+    /*.minipic {*/
+    /*    left:86%;*/
+    /*}*/
+}
+
+.gal_pad {
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+h1 {
+    font-size: 30px;
+}
+
+.about-text,
+.about-text2 {
+    font-size: 20px;
+}
+
+.parallax3 {
+    height: 850px;
+}
+
+img.img-fluid {
+    max-height: 300px;
+    padding-top: 20px;
+}
+
+img.imgpad {
+    padding: 27px 0px;
+    width: 90px;
+}
+
+.about {
+    font-size: 28px;
+    padding: 15px;
+}
+
+.aos-init {
+    text-align: center;
+    width: 60;
+    padding: 0 10px;
+}
+
+.flex-container.about {
+    display: block;
+    margin: 10px 20px;
+}
+
+img.team.card-img-top {
+    width: 120%;
+    height: 120%;
+}
+
+div.card-about {
+    display: block;
+    max-width: 80%;
+    text-align: center;
+    margin: 0;
+}
+
+.about.card-title,
+.card-body {
+    font-size: 18px;
+    padding: 10px;
+    text-align: left;
+}
+
+
+/* services */
+
+
+/* .description {
+    font-size: 18px;
+}
+
+.row_title {
+    padding: 20px;
+    margin: 0;
+}
+
+.row.item>.col-md-6 {
+    display: flex;
+    flex-direction: column;
+}
+
+.item-img {
+    width: 90%;
+    height: 100%;
+    margin: 0 auto;
+    padding-top: 30px;
+}
+
+h4.serviceName {
+    font-size: 25px;
+    padding: 15px 10px;
+}
+
+.details,
+p.service.price {
+    font-size: 15px;
+    padding: 10px 15px;
+    width: 450px;
+}
+
+.add-cart {
+    font-size: 15px;
+    text-align: center;
+    padding: 5px 15px;
+    width: 250px;
+}
+
+
+} */
