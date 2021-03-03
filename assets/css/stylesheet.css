@@ -1256,8 +1256,9 @@ div.total {
 /* For mobile phones */
 
 @media screen and (max-width: 480px) {
+    /* home page */
     .top {
-        width: 80%;
+        width: 95%;
         margin: auto;
     }
     .logo,
@@ -1269,6 +1270,24 @@ div.total {
     }
     .navbar-toggler-icon {
         color: rgb(57, 57, 57);
+    }
+    .parallax,
+    .parallax2 {
+        height: 400px;
+        width: 450px;
+    }
+    .parallax-text {
+        font-size: 20px;
+        padding: 150px 0 100px 50px;
+    }
+    .text-box {
+        font-size: 18px;
+        line-height: 38px;
+    }
+    .container.carousel,
+    .carousel-item,
+    .d-block.w-100 {
+        height: 280px;
     }
     .dropdownbtn-txt {
         font-size: 15px;
@@ -1285,29 +1304,100 @@ div.total {
         padding: 0;
     }
     .col-md-6.right {
-        padding: 0px 110px;
+        padding: 20px 113px;
         margin: 0px;
-        align-items: center;
-        justify-content: center;
+        text-align: center;
         font-size: 15px;
     }
     i.fab {
         width: 60%;
         display: inline;
-        align-items: center;
-        justify-content: center;
+        text-align: center;
+        padding: 0 10px;
     }
     h2 {
         font-size: 10px;
     }
-    .parallax,
-    .parallax2 {
-        height: 500px;
+    /* about page */
+    h1 {
+        font-size: 30px;
     }
-    .parallax-text {
+    .about-text,
+    .about-text2 {
         font-size: 20px;
     }
-    .text-box {
+    .parallax3 {
+        height: 850px;
+    }
+    img.img-fluid {
+        max-height: 300px;
+        padding-top: 20px;
+    }
+    img.imgpad {
+        padding: 27px 0px;
+        width: 90px;
+    }
+    .about {
+        font-size: 28px;
+        padding: 15px;
+    }
+    .aos-init {
+        text-align: center;
+        width: 60;
+        padding: 0 10px;
+    }
+    .flex-container.about {
+        display: block;
+        margin: 10px 20px;
+    }
+    img.team.card-img-top {
+        width: 120%;
+        height: 120%;
+    }
+    div.card-about {
+        display: block;
+        max-width: 80%;
+        height text-align: center;
+        margin: 0;
+    }
+    .about.card-title,
+    .card-body {
+        font-size: 18px;
+        padding: 10px;
+        text-align: left;
+    }
+    /* services */
+    .description {
+        font-size: 18px;
+    }
+    .row_title {
+        padding: 20px;
+        margin: 0;
+    }
+    .row.item>.col-md-6 {
+        display: flex;
+        flex-direction: column;
+    }
+    .item-img {
+        width: 90%;
+        height: 100%;
+        margin: 0 auto;
+        padding-top: 30px;
+    }
+    h4.serviceName {
+        font-size: 25px;
+        padding: 15px 10px;
+    }
+    .details,
+    p.service.price {
         font-size: 15px;
+        padding: 10px 15px;
+        width: 450px;
+    }
+    .add-cart {
+        font-size: 15px;
+        text-align: center;
+        padding: 5px 15px;
+        width: 250px;
     }
 }
