@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Services</title>
+    <title>Shopping Cart</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -12,9 +12,16 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
     <link rel="stylesheet" href="assets/css/stylesheet.css">
+    <!--Luqman's CSS-->
+    <!-- <link rel="stylesheet" href="assets/css/JennysStylesheet.css">
+    <link rel="stylesheet" href="assets/css/style_p.css"> -->
+    <!-- ^navbar stylesheet based on stylesheet.css^-->
+    <!-- <link rel="stylesheet" href="assets/css/waterfall.css"> -->
 
     <!-- Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat&family=Playfair+Display&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Quattrocento+Sans&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC&family=Playfair+Display&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Bilbo+Swash+Caps&family=Raleway:wght@200&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/81d30d81d6.js" crossorigin="anonymous"></script>
 
 </head>
@@ -47,7 +54,7 @@
                     </li>
                     <li>
                         <a class="nav-item btn dropdown-toggle " data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
-                            PORTFOLIO
+                        PORTFOLIO
                     </a>
 
                     </li>
@@ -88,79 +95,83 @@
         </div>
 
 
-        <!-- Page title -->
-        <div class="row_title">
-            <h1>Services</h1>
-            <p class="description">We offer a variety of photography packages to suit many needs.<br> Take a look at our prices below, or discover our other exciting packages</p>
-        </div>
-
         <!-- content -->
-        <div class="row item">
-            <div class="col-md-6" id="Wedding">
-                <a href="/gallery_wedding.html"><img class="item-img" src="PhotoStudio/wedding.jpg" alt="Card image cap">
-                </a>
-                <h4 class="serviceName">Wedding Package</h4>
-                <p class="details">Lift the memories of your wedding day with pictures taken in exotic locales</p>
-                <hr style="border: 2px solid grey; width:100%;margin-right: 100%;">
-                <p class="service price">$5,000</p>
-                <button type="button" class="add-cart" onclick="addToCart()">Add to cart</button>
+
+        <h1> Shopping Cart</h1>
+        <div class="cart-box">
+            <div class="container-products">
+                <div class="product-header">
+                    <h5 class="product-title">PRODUCT</h5>
+                    <h5 class="price sm-hide">PRICE</h5>
+                    <h5 class="quantity">QUANTITY</h5>
+                    <h5 class="total">TOTAL</h5>
+                </div>
             </div>
 
-            <div class="col-md-6" id="Architecture">
-                <a href="gallery_architecture.html"><img class="item-img" src="PhotoStudio/architectural.jpg" alt="Card image cap "></a>
-                <h4 class="serviceName">Architectural</h4>
-                <p class="details">Impress your clients, or shore up your portfolio with our Architectural photography services.</p>
-                <hr style="border: 2px solid grey; width:100%;margin-right: 100%;">
-                <p class="service price">$1,000</p>
-                <button type="button" class="add-cart" onclick="addToCart()">Add to cart</button>
+            <div class="products">
 
             </div>
         </div>
 
-        <div class="row item">
-            <div class="col-md-6" id="Studio">
-
-                <a href="gallery_studio.html"> <img class="item-img" src="PhotoStudio/studio.jpg" alt="Card image cap"></a>
-                <h4 class="serviceName">Studio</h4>
-                <p class="details">Look your best for your headshots and corporate profiles.</p>
-                <hr style="border: 2px solid grey; width:100%;margin-right: 100%;">
-                <p class="service price">$2,000</p>
-                <button type="button" class="add-cart" onclick="addToCart()">Add to cart</button>
-            </div>
-
-
-            <div class="col-md-6" id="Drone">
-
-                <a href="gallery_drone.html"> <img class="item-img" src="PhotoStudio/drone.jpg " alt="Card image cap "></a>
-                <h4 class="serviceName">Drone</h4>
-                <p class="details">We offer the best drone photography and videography services in Singapore.</p>
-                <hr style="border: 2px solid grey; width:100%;margin-right: 100%;">
-                <p class="service price">$5,000</p>
-                <button type="button" class="add-cart" onclick="addToCart()">Add to cart</button>
+        <div class="payment methods">
+            <div class="row">
+                <div class="col-xs-12 col-md-10 col-md-offset-4">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <div class="row">
+                                <h2 class="text-center">Payment Details</h2>
+                                <img class="img-responsive cc-img" src="http://www.prepbootstrap.com/Content/images/shared/misc/creditcardicons.png">
+                            </div>
+                        </div>
+                        <div class="panel-body">
+                            <form role="form">
+                                <div class="row">
+                                    <div class="col-xs-12">
+                                        <div class="form-group">
+                                            <label>CARD NUMBER</label>
+                                            <div class="input-group">
+                                                <input type="tel" class="form-control" placeholder="Valid Card Number" />
+                                                <span class="input-group-addon"><span class="fa fa-credit-card"></span></span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-xs-7 col-md-7">
+                                        <div class="form-group">
+                                            <label><span class="hidden-xs">EXPIRATION</span><span class="visible-xs-inline">EXP</span> DATE</label>
+                                            <input type="tel" class="form-control" placeholder="MM / YY" />
+                                        </div>
+                                    </div>
+                                    <div class="col-xs-5 col-md-5 pull-right">
+                                        <div class="form-group">
+                                            <label>CV CODE</label>
+                                            <input type="tel" class="form-control" placeholder="CVC" />
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-xs-12">
+                                        <div class="form-group">
+                                            <label>CARD OWNER</label>
+                                            <input type="text" class="form-control" placeholder="Card Owner Names" />
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                        <div class="panel-footer">
+                            <div class="row">
+                                <div class="col-xs-12">
+                                    <a href="paymentSuccess.html"> <button class="btn btn-warning btn-lg btn-block">Process payment</button></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
 
-        <div class="row item">
-            <div class="col-md-6" id="Outdoor">
-                <a href="gallery_outdoors.html"> <img class="item-img" src="PhotoStudio/outdoor.jpg" alt="Card image cap"></a>
-                <h4 class="serviceName">Outdoor</h4>
-                <p class="details">Take in dizzying landscapes with our outdoors photography and videography packages</p>
-                <hr style="border: 2px solid grey; width:100%;margin-right: 100%;">
-                <p class="service price">$3,000</p>
-                <button type="button" class="add-cart" onclick="addToCart()">Add to cart</button>
-            </div>
-
-            <div class="col-md-6" id="Product">
-                <a href="gallery_product.html"><img class="item-img" src="PhotoStudio/product.jpg" alt="Card image cap "></a>
-                <h4 class="serviceName">Product</h4>
-                <p class="details">Have a product to sell? Have its picture professionally taken.</p>
-                <hr style="border: 2px solid grey; width:100%;margin-right: 100%;">
-                <p class="service price">$4,500</p>
-                <button type="button" class="add-cart" onclick="addToCart()">Add to cart</button>
-            </div>
-        </div>
-
-        <a href="#top"><button type="button" class="btn btn-outline-dark top">Back to top</button></a>
 
         <!-- footer -->
         <div class="footer">
@@ -194,8 +205,8 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
     <script src="assets/js/main_js.js"></script>
-    <script src=" assets/css/waterfall.css "></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js "></script>
+    <script src="assets/js/waterfall.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
 
 </body>
 

@@ -372,9 +372,61 @@ function addToCart() {
     alert("Added to cart !");
 }
 
-// ################ TEST FETCH FUNCTION ################
+function initFreshChat() {
+    window.fcWidget.init({
+        token: "dc12e29a-b0b9-4ced-8059-8e5d56fda4ae",
+        host: "https://wchat.freshchat.com"
+    });
+}
+
+function initialize(i, t) {
+    var e;
+    i.getElementById(t) ? initFreshChat() : ((e = i.createElement("script")).id = t, e.async = !0, e.src = "https://wchat.freshchat.com/js/widget.js", e.onload = initFreshChat, i.head.appendChild(e))
+}
+
+function initiateCall() {
+    initialize(document, "freshchat-js-sdk")
+}
+window.addEventListener ? window.addEventListener("load", initiateCall, !1) : window.attachEvent("load", initiateCall, !1);
+
+$('.img-parallax').each(function() {
+    var img = $(this);
+    var imgParent = $(this).parent();
+
+    function parallaxImg() {
+        var speed = img.data('speed');
+        var imgY = imgParent.offset().top;
+        var winY = $(this).scrollTop();
+        var winH = $(this).height();
+        var parentH = imgParent.innerHeight();
 
 
+        // The next pixel to show on screen
+        var winBottom = winY + winH;
+
+        // If block is shown on screen
+        if (winBottom > imgY && winY < imgY + parentH) {
+            // Number of pixels shown after block appear
+            var imgBottom = ((winBottom - imgY) * speed);
+            // Max number of pixels until block disappear
+            var imgTop = winH + parentH;
+            // Percentage between start showing until disappearing
+            var imgPercent = ((imgBottom / imgTop) * 100) + (50 - (speed * 50));
+        }
+        img.css({
+            top: imgPercent + '%',
+            transform: 'translate(-50%, -' + imgPercent + '%)'
+        });
+    }
+    $(document).on({
+        scroll: function() {
+            parallaxImg();
+        },
+        ready: function() {
+            parallaxImg();
+        }
+    });
+});
 
 
 // when page loads, this will run and check it
